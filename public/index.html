@@ -24,13 +24,41 @@
       <div class="step" id="step1">
         <h2>Anamnesi familiare e genetica</h2>
 
-        <label>1. Hai parenti di primo grado con malattie cardiovascolari?</label>
-        <select name="fam_cv">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <input type="text" name="fam_cv_note" />
+        <label><strong>
+                Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che hanno avuto infarti o altre malattie coronariche?
+              </strong></label>
+              <p>Seleziona tutte le opzioni che si applicano e specifica l’età di insorgenza, se nota.</p>
+            
+              <label>
+                <input type="checkbox" name="parenti_malattie_coronariche" value="nessun_caso_noto" />
+                Nessun caso noto in famiglia
+              </label><br />
+            
+              <label>
+                <input type="checkbox" name="parenti_malattie_coronariche" value="maschio_sotto_55" />
+                Sì, in un parente di sesso maschile prima dei 55 anni
+              </label><br />
+            
+              <label>
+                <input type="checkbox" name="parenti_malattie_coronariche" value="femmina_sotto_65" />
+                Sì, in un parente di sesso femminile prima dei 65 anni
+              </label><br />
+            
+              <label>
+                <input type="checkbox" name="parenti_malattie_coronariche" value="più_familiari" />
+                Sì, in più di un familiare
+              </label><br />
+            
+              <label>
+                <input type="checkbox" name="parenti_malattie_coronariche" value="non_lo_so" />
+                Non lo so
+              </label><br />
+            
+              <label for="parenti_malattie_coronariche_note"><br />
+                Specificare se possibile tipo di malattia e età di insorgenza:
+              </label>
+              <textarea name="parenti_malattie_coronariche_note" rows="3"></textarea>
+            </div>     
 
         <label>2. Ci sono casi di diabete nella tua famiglia?</label>
         <select name="fam_diabete">
