@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Questionario Qualità della Vita</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Questionario Qualità della Vita</h1>
+    <form id="questionarioForm">
+        <div class="section">
+            <label>Nome</label>
+            <input type="text" name="nome" required />
+    
+            <label>Cognome</label>
+            <input type="text" name="cognome" required />
+    
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+
+      <div class="step" id="step1">
+        <h2>Anamnesi familiare e genetica</h2>
+
+        <label>1. Hai parenti di primo grado con malattie cardiovascolari?</label>
+        <select name="fam_cv">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <input type="text" name="fam_cv_note" />
+
+        <label>2. Ci sono casi di diabete nella tua famiglia?</label>
+        <select name="fam_diabete">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <input type="text" name="fam_diabete_note" />
+
+        <label>3. Hai familiarità per malattie oncologiche?</label>
+        <select name="fam_cancro">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica tipo di tumore:</label>
+        <input type="text" name="fam_cancro_note" />
+
+        <label>4. Ci sono casi di malattie neurodegenerative in famiglia?</label>
+        <select name="fam_neurodegenerative">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <input type="text" name="fam_neurodegenerative_note" />
+
+        <label>5. Hai familiarità per malattie autoimmuni?</label>
+        <select name="fam_autoimmune">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica quali:</label>
+        <input type="text" name="fam_autoimmune_note" />
+
+        <label>6. Hai parenti con allergie o asma?</label>
+        <select name="fam_allergie">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <input type="text" name="fam_allergie_note" />
+
+        <label>7. Ci sono casi di ipertensione arteriosa in famiglia?</label>
+        <select name="fam_ipertensione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>8. Hai familiarità per malattie renali?</label>
+        <select name="fam_renali">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <input type="text" name="fam_renali_note" />
+
+        <label>9. Ci sono casi di malattie epatiche in famiglia?</label>
+        <select name="fam_epatiche">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>10. Hai parenti con problemi tiroidei?</label>
+        <select name="fam_tiroide">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>11. Ci sono casi di malattie psichiatriche in famiglia?</label>
+        <select name="fam_psichiatriche">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <input type="text" name="fam_psichiatriche_note" />
+
+        <label>12. Hai familiarità per malattie respiratorie croniche?</label>
+        <select name="fam_respiratorie">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>13. Ci sono casi di osteoporosi in famiglia?</label>
+        <select name="fam_osteoporosi">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>14. Hai parenti con malattie gastrointestinali croniche?</label>
+        <select name="fam_gastrointestinali">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>15. Ci sono casi di malattie ematologiche in famiglia?</label>
+        <select name="fam_ematologiche">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>16. Hai altre malattie ereditarie nella famiglia di cui vuoi parlare?</label>
+        <textarea name="fam_altre" rows="3"></textarea>
+      </div>
+
+      <div class="step" id="step2">
+        <h2>Sviluppo e anamnesi personale (Domande 17–32)</h2>
+
+        <label>17. Sei nato a termine o pretermine?</label>
+        <select name="nascita_termine">
+          <option value="termine">A termine</option>
+          <option value="pretermine">Pretermine</option>
+        </select>
+
+        <label>18. Hai avuto complicazioni alla nascita?</label>
+        <select name="complicazioni_nascita">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <textarea name="complicazioni_nascita_note" rows="3"></textarea>
+
+        <label>19. Hai avuto problemi di crescita o sviluppo durante l'infanzia?</label>
+        <select name="problemi_crescita">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <textarea name="problemi_crescita_note" rows="3"></textarea>
+
+        <label>20. Hai avuto malattie importanti durante l'infanzia?</label>
+        <select name="malattie_infanzia">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica quali:</label>
+        <textarea name="malattie_infanzia_note" rows="3"></textarea>
+
+        <label>21. Hai mai avuto interventi chirurgici?</label>
+        <select name="interventi_chirurgici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica quali e quando:</label>
+        <textarea name="interventi_chirurgici_note" rows="3"></textarea>
+
+        <label>22. Hai allergie note?</label>
+        <select name="allergie_personali">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <textarea name="allergie_personali_note" rows="3"></textarea>
+
+        <label>23. Hai mai avuto malattie infettive importanti?</label>
+        <select name="malattie_infettive">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica quali:</label>
+        <textarea name="malattie_infettive_note" rows="3"></textarea>
+
+        <label>24. Hai mai avuto problemi cardiaci?</label>
+        <select name="problemi_cardiaci">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>25. Hai mai sofferto di ipertensione?</label>
+        <select name="ipertensione_personale">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>26. Hai mai avuto diabete?</label>
+        <select name="diabete_personale">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>27. Hai mai avuto problemi respiratori cronici?</label>
+        <select name="problemi_respiratori">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>28. Hai mai sofferto di disturbi neurologici?</label>
+        <select name="disturbi_neurologici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>29. Hai mai avuto disturbi psichiatrici?</label>
+        <select name="disturbi_psichiatrici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>30. Hai mai avuto patologie autoimmuni?</label>
+        <select name="autoimmuni_personali">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>31. Sei attualmente in terapia farmacologica?</label>
+        <select name="terapia_farmacologica">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica quali farmaci:</label>
+        <textarea name="terapia_farmacologica_note" rows="3"></textarea>
+
+        <label>32. Hai altre condizioni mediche personali di cui vuoi parlare?</label>
+        <textarea name="condizioni_personali_altre" rows="3"></textarea>
+      </div>
+
+      <div class="step" id="step3">
+        <h2>Fattori ambientali e stile di vita (Domande 33–45)</h2>
+
+        <label>33. Dove vivi principalmente?</label>
+        <select name="residenza">
+          <option value="urbana">Area urbana</option>
+          <option value="suburbana">Area suburbana</option>
+          <option value="rurale">Area rurale</option>
+        </select>
+
+        <label>34. Sei esposto a inquinamento atmosferico o sostanze tossiche?</label>
+        <select name="esposizione_inquinanti">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica quali:</label>
+        <textarea name="esposizione_inquinanti_note" rows="3"></textarea>
+
+        <label>35. Fumi?</label>
+        <select name="fumo">
+          <option value="no">No</option>
+          <option value="occasionale">Occasionale</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>36. Bevi alcolici?</label>
+        <select name="alcool">
+          <option value="no">No</option>
+          <option value="occasionale">Occasionale</option>
+          <option value="regolare">Regolare</option>
+        </select>
+
+        <label>37. Pratichi attività fisica?</label>
+        <select name="attivita_fisica">
+          <option value="no">No</option>
+          <option value="1-2">1-2 volte a settimana</option>
+          <option value="3+">3 o più volte a settimana</option>
+        </select>
+
+        <label>38. Quante ore dormi mediamente per notte?</label>
+        <input type="number" name="sonno_ore" min="0" max="12" />
+
+        <label>39. Come valuti il tuo livello di stress?</label>
+        <select name="stress">
+          <option value="basso">Basso</option>
+          <option value="moderato">Moderato</option>
+          <option value="alto">Alto</option>
+        </select>
+
+        <label>40. Sei esposto a rumori forti o ambienti rumorosi?</label>
+        <select name="esposizione_rumore">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>41. Usi dispositivi elettronici prima di dormire?</label>
+        <select name="uso_elettronici_sonno">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>42. Hai animali domestici?</label>
+        <select name="animali_domestici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>43. Sei esposto a fumo passivo?</label>
+        <select name="fumo_passivo">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>44. Usi prodotti chimici o detergenti aggressivi frequentemente?</label>
+        <select name="uso_prodotti_chimici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>45. Hai altre informazioni sul tuo ambiente o stile di vita da condividere?</label>
+        <textarea name="ambiente_altro" rows="3"></textarea>
+      </div>
+
+      <div class="step" id="step4">
+        <h2>Condizioni cliniche e malattie (Domande 46–80)</h2>
+
+        <label>46. Hai mai avuto malattie cardiovascolari?</label>
+        <select name="malattie_cardiovascolari">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>47. Hai mai avuto infarti o ischemie?</label>
+        <select name="infarti_ischemie">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>48. Hai mai avuto ipertensione arteriosa?</label>
+        <select name="ipertensione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>49. Hai mai sofferto di diabete mellito?</label>
+        <select name="diabete">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>50. Hai mai avuto problemi renali?</label>
+        <select name="problemi_renali">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>51. Hai mai sofferto di malattie epatiche?</label>
+        <select name="malattie_epatiche">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>52. Hai mai avuto disturbi gastrointestinali cronici?</label>
+        <select name="disturbi_gastrointestinali">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>53. Hai mai sofferto di malattie polmonari croniche?</label>
+        <select name="malattie_polmonari">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>54. Hai mai avuto disturbi neurologici?</label>
+        <select name="disturbi_neurologici_clinici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>55. Hai mai sofferto di malattie autoimmuni?</label>
+        <select name="malattie_autoimmuni">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>56. Hai mai avuto problemi dermatologici cronici?</label>
+        <select name="problemi_dermatologici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>57. Hai mai sofferto di disturbi psichiatrici diagnosticati?</label>
+        <select name="disturbi_psichiatrici_clinici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>58. Hai mai avuto tumori?</label>
+        <select name="tumori">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica tipo e anno di diagnosi:</label>
+        <textarea name="tumori_note" rows="3"></textarea>
+
+        <label>59. Hai mai avuto problemi di vista o udito?</label>
+        <select name="problemi_vista_udito">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>60. Hai mai sofferto di problemi muscoloscheletrici?</label>
+        <select name="problemi_muscoloscheletrici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>61. Hai mai avuto problemi di coagulazione o emorragie?</label>
+        <select name="problemi_coagulazione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>62. Hai mai sofferto di problemi endocrini?</label>
+        <select name="problemi_endocrini">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>63. Hai mai avuto infezioni croniche?</label>
+        <select name="infezioni_croniche">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>64. Hai mai avuto problemi di fertilità?</label>
+        <select name="problemi_fertilita">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>65. Hai mai sofferto di disturbi del sonno diagnosticati?</label>
+        <select name="disturbi_sonno_clinici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>66. Sei stato ricoverato negli ultimi 5 anni?</label>
+        <select name="ricoveri_ultimi_5_anni">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica motivo e durata:</label>
+        <textarea name="ricoveri_note" rows="3"></textarea>
+
+        <label>67. Hai mai subito traumi importanti?</label>
+        <select name="traumi_importanti">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <textarea name="traumi_note" rows="3"></textarea>
+
+        <label>68. Hai mai avuto problemi dentali o gengivali?</label>
+        <select name="problemi_dentali">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>69. Hai mai sofferto di problemi gastrointestinali acuti?</label>
+        <select name="problemi_gastrointestinali_acuti">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>70. Hai mai avuto problemi di circolazione periferica?</label>
+        <select name="problemi_circolazione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>71. Hai mai sofferto di allergie o intolleranze alimentari?</label>
+        <select name="allergie_intolleranze_alimentari">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>72. Hai mai avuto problemi di peso o disturbi alimentari?</label>
+        <select name="problemi_peso_disturbi_alimentari">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>73. Hai mai sofferto di problemi immunitari?</label>
+        <select name="problemi_immunitari">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>74. Hai mai avuto problemi di equilibrio o vertigini?</label>
+        <select name="problemi_equilibrio">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>75. Hai mai sofferto di problemi di memoria o concentrazione?</label>
+        <select name="problemi_memoria_concentrazione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>76. Hai mai avuto problemi di vista o udito?</label>
+        <select name="problemi_vista_udito_clinici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>77. Hai mai sofferto di disturbi gastrointestinali funzionali?</label>
+        <select name="disturbi_gastrointestinali_funzionali">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>78. Hai mai avuto problemi di salute mentale?</label>
+        <select name="problemi_salute_mentale">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>79. Hai mai avuto problemi di dipendenze (alcool, droghe, farmaci)?</label>
+        <select name="problemi_dipendenze">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>80. Hai altre condizioni cliniche o malattie di cui vuoi parlare?</label>
+        <textarea name="condizioni_cliniche_altre" rows="3"></textarea>
+      </div>
+
+      <div class="step" id="step5">
+        <h2>Benessere psicofisico, stress, sonno (Domande 81–94)</h2>
+
+        <label>81. Come valuti il tuo stato di benessere generale?</label>
+        <select name="benessere_generale">
+          <option value="ottimo">Ottimo</option>
+          <option value="buono">Buono</option>
+          <option value="discreto">Discreto</option>
+          <option value="scarso">Scarso</option>
+        </select>
+
+        <label>82. Hai difficoltà a gestire lo stress quotidiano?</label>
+        <select name="gestione_stress">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>83. Hai mai avuto episodi di ansia o depressione?</label>
+        <select name="ansia_depressione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>84. Quante ore dormi mediamente per notte?</label>
+        <input type="number" name="ore_sonno" min="0" max="12" />
+
+        <label>85. Hai difficoltà ad addormentarti?</label>
+        <select name="difficolta_addormentarsi">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>86. Ti svegli frequentemente durante la notte?</label>
+        <select name="risvegli_notturni">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>87. Ti senti riposato al risveglio?</label>
+        <select name="riposo_al_risveglio">
+          <option value="sempre">Sempre</option>
+          <option value="spesso">Spesso</option>
+          <option value="raramente">Raramente</option>
+          <option value="mai">Mai</option>
+        </select>
+
+        <label>88. Hai mai usato farmaci per favorire il sonno?</label>
+        <select name="farmaci_sonno">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>89. Pratichi tecniche di rilassamento o meditazione?</label>
+        <select name="tecniche_rilassamento">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>90. Hai mai sofferto di affaticamento cronico?</label>
+        <select name="affaticamento_cronico">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>91. Hai difficoltà a mantenere la concentrazione?</label>
+        <select name="difficolta_concentrazione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>92. Ti senti spesso irritabile o nervoso?</label>
+        <select name="irritabilita">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>93. Hai altre osservazioni sul tuo benessere psicofisico?</label>
+        <textarea name="benessere_psicofisico_altro" rows="3"></textarea>
+
+        <label>94. Hai suggerimenti o commenti sul tuo stato di stress o sonno?</label>
+        <textarea name="stress_sonno_commenti" rows="3"></textarea>
+      </div>
+
+      <div class="step" id="step6">
+        <h2>Nutrizione, microbiota, infiammazione, rigenerazione (Domande 95–115)</h2>
+
+        <label>95. Quante porzioni di frutta mangi al giorno?</label>
+        <input type="number" name="porzioni_frutta" min="0" max="10" />
+
+        <label>96. Quante porzioni di verdura mangi al giorno?</label>
+        <input type="number" name="porzioni_verdura" min="0" max="10" />
+
+        <label>97. Consumi regolarmente alimenti fermentati (es. yogurt, kefir)?</label>
+        <select name="alimenti_fermentati">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>98. Bevi acqua regolarmente durante la giornata?</label>
+        <select name="acqua">
+          <option value="si">Sì</option>
+          <option value="no">No</option>
+        </select>
+
+        <label>99. Consumi frequentemente cibi processati o fast food?</label>
+        <select name="cibi_processati">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>100. Hai intolleranze o allergie alimentari?</label>
+        <select name="intolleranze_allergie_alimentari">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <textarea name="intolleranze_allergie_note" rows="3"></textarea>
+
+        <label>101. Consumi integratori alimentari o probiotici?</label>
+        <select name="integratori_probiotici">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica quali:</label>
+        <textarea name="integratori_probiotici_note" rows="3"></textarea>
+
+        <label>102. Hai problemi digestivi ricorrenti (gonfiore, diarrea, stitichezza)?</label>
+        <select name="problemi_digestivi">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>103. Segui una dieta particolare (vegetariana, vegana, senza glutine)?</label>
+        <select name="dieta_particolare">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica:</label>
+        <textarea name="dieta_particolare_note" rows="3"></textarea>
+
+        <label>104. Consumi abitualmente cibi ricchi di zuccheri?</label>
+        <select name="consumo_zuccheri">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>105. Consumi abitualmente cibi ricchi di grassi saturi?</label>
+        <select name="consumo_grassi_saturi">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>106. Consumi abitualmente cibi ricchi di fibre?</label>
+        <select name="consumo_fibre">
+          <option value="si">Sì</option>
+          <option value="no">No</option>
+        </select>
+
+        <label>107. Hai mai avuto infiammazioni croniche?</label>
+        <select name="infiammazioni_croniche">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>108. Hai mai avuto problemi di cicatrizzazione o rigenerazione tissutale?</label>
+        <select name="problemi_cicatrizzazione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>109. Pratichi attività fisica per favorire la rigenerazione?</label>
+        <select name="attivita_rigenerazione">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>110. Hai mai fatto esami del microbiota intestinale?</label>
+        <select name="esami_microbiota">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+        <label>Se sì, specifica risultati o osservazioni:</label>
+        <textarea name="esami_microbiota_note" rows="3"></textarea>
+
+        <label>111. Usi prodotti naturali o fitoterapici per il benessere intestinale?</label>
+        <select name="prodotti_naturali_intestino">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>112. Hai mai avuto problemi di gonfiore addominale?</label>
+        <select name="gonfiore_addominale">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>113. Hai mai avuto problemi di stipsi o diarrea ricorrenti?</label>
+        <select name="stitichezza_diarrea">
+          <option value="no">No</option>
+          <option value="si">Sì</option>
+        </select>
+
+        <label>114. Hai altre osservazioni sulla tua alimentazione o benessere intestinale?</label>
+        <textarea name="alimentazione_benessere_intestinale_altro" rows="3"></textarea>
+
+        <label>115. Hai suggerimenti o commenti sulla tua nutrizione o rigenerazione?</label>
+        <textarea name="nutrizione_rigenerazione_commenti" rows="3"></textarea>
+      </div>
+
+      <button type="submit">Invia e genera report</button>
+    </form>
+
+    <div id="risultato" class="hidden">
+      <h2>Il tuo Report</h2>
+      <div id="reportTesto"></div>
+      <canvas id="radarChart" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
