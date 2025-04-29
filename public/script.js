@@ -1,57 +1,56 @@
-// public/script.js
-document.getElementById('questionarioForm').addEventListener('submit', async (e) => {
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('questionarioForm');
+  if (!form || !(form instanceof HTMLFormElement)) {
+    console.error('Form non trovato o non è un elemento HTMLFormElement.');
+    return;
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-  
-    const form = e.target;
+
     const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => data[key] = value);
-  
-    // Invia i dati al backend
+
     try {
-      const res = await fetch('/submit', {
+      const res = await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-  
-      const { report } = await res.json();
-      mostraReport(report);
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+
+      // Reindirizza alla pagina di ringraziamento
+      window.location.href = 'report.html';
     } catch (error) {
       console.error("Errore nell'invio del questionario:", error);
+      alert('Si è verificato un errore durante l\'invio. Per favore riprova.');
     }
   });
-  
-  function mostraReport(report) {
-    document.getElementById('risultato').classList.remove('hidden');
-    document.getElementById('reportTesto').innerHTML = `
-      <p><strong>Analisi:</strong></p>
-      <pre>${JSON.stringify(report.analisi, null, 2)}</pre>
-      <p><strong>Diagnosi Possibili:</strong> ${report.diagnosiPossibili?.join(', ')}</p>
-      <p><strong>Raccomandazioni Generali:</strong></p>
-      <ul>${report.raccomandazioniGenerali?.map(r => `<li>${r}</li>`).join('')}</ul>
-    `;
-  
-    const ctx = document.getElementById('radarChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'radar',
-      data: {
-        labels: report.radarChart.map(e => e.category),
-        datasets: [{
-          label: 'Qualità della Vita',
-          data: report.radarChart.map(e => e.value),
-          fill: true,
-          borderWidth: 2
-        }]
-      },
-      options: {
-        scales: {
-          r: {
-            suggestedMin: 0,
-            suggestedMax: 100
-          }
-        }
-      }
-    });
+
+
+  // Calcolo automatico BMI
+  const pesoInput = document.getElementById('peso');
+  const altezzaInput = document.getElementById('altezza');
+  const bmiOutput = document.getElementById('bmi');
+
+  function calcolaBMI() {
+    const peso = parseFloat(pesoInput?.value);
+    const altezza = parseFloat(altezzaInput?.value) / 100;
+
+    if (!isNaN(peso) && !isNaN(altezza) && altezza > 0) {
+      const bmi = peso / (altezza * altezza);
+      if (bmiOutput) bmiOutput.value = bmi.toFixed(2);
+    } else {
+      if (bmiOutput) bmiOutput.value = '';
+    }
   }
-  
+
+  if (pesoInput && altezzaInput) {
+    pesoInput.addEventListener('input', calcolaBMI);
+    altezzaInput.addEventListener('input', calcolaBMI);
+  }
+});

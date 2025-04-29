@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Questionario Qualità della Vita</h1>
+    <h1>PREDICTION TEST BY ENNIO TASCIOTTI</h1>
     <form id="questionarioForm">
         <div class="section">
             <label>Nome</label>
@@ -19,780 +19,1601 @@
     
             <label>Email</label>
             <input type="email" name="email" required />
+
           </div>
+          <hr>
 
       <div class="step" id="step1">
-        <h2>Anamnesi familiare e genetica</h2>
+        <h2>STORIA FAMILIARE, GENETICA, STORIA PERSONALE, FISIOLOGIA E FATTORI AMBIENTALI</h2>
+        <h5>Se disponi di un test o di un’analisi recente relativa a {STORIA FAMILIARE, GENETICA, STORIA PERSONALE, FISIOLOGIA E FATTORI AMBIENTALI}, puoi inviarla: ci aiuterà a elaborare un report ancora più preciso e personalizzato.</h5>
 
         <label><strong>
-                Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che hanno avuto infarti o altre malattie coronariche?
-              </strong></label>
-              <p>Se si, specifica l’età di insorgenza, se nota.</p>
+          1. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che hanno avuto patologie cardiovascolari?</strong>
+          </label><br />
+          <label><input type="checkbox" name="patologie_cardiovascolari[]" value="infarto" /> Infarto</label><br />
+          <label><input type="checkbox" name="patologie_cardiovascolari[]" value="aritmie" /> Aritmie</label><br />
+          <label><input type="checkbox" name="patologie_cardiovascolari[]" value="ipertensione" /> Ipertensione arteriosa</label><br />
+          <label><input type="checkbox" name="patologie_cardiovascolari[]" value="ictus" /> Ictus</label><br />
+          <label><input type="checkbox" name="patologie_cardiovascolari[]" value="malattia_coronarica" /> Malattia coronarica</label><br />
+          <label><input type="checkbox" name="patologie_cardiovascolari[]" value="aneurisma" /> Aneurisma</label><br />
+          <label>
+            <input type="checkbox" name="patologie_cardiovascolari[]" value="altro" onchange="document.getElementById('altro_cardio').style.display = this.checked ? 'block' : 'none'" />
+            Altro (specifica)
+          </label><br />
+          <div id="altro_cardio" style="display: none; margin-left: 20px;">
+            <label>Quale patologia?</label><br />
+            <input type="text" name="cardio_altro_descrizione" placeholder="Es: Miocardiopatia dilatativa" /><br />
+            <label>Grado di parentela</label><br />
+            <input type="text" name="cardio_altro_parentela" placeholder="Es: Zio paterno, madre, fratello..." /><br />
+            <label>Età di insorgenza (se conosciuta)</label><br />
+            <input type="number" name="cardio_altro_eta" placeholder="Età" min="0" />
+          </div>
+          <label><input type="checkbox" name="patologie_cardiovascolari[]" value="nessuna" /> Nessuna di queste</label><br />
+
+            <label><strong>
+              2. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) a cui è stata diagnosticata l’ipertensione arteriosa?
+            </strong></label><br />
             
-              <label>
-                <input type="checkbox" name="parenti_malattie_coronariche" value="nessun_caso_noto" />
-                Nessun caso noto in famiglia
+            <label>
+              <input type="checkbox" name="familiari_ipertensione" value="nessun_caso_noto" />
+              Nessun caso noto in famiglia
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="familiari_ipertensione" value="diagnosi_dopo_40" />
+              Sì, un familiare con ipertensione diagnosticata dopo i 40 anni
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="familiari_ipertensione" value="diagnosi_prima_40" />
+              Sì, un familiare con ipertensione diagnosticata prima dei 40 anni
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="familiari_ipertensione" value="più_familiari" />
+              Sì, più familiari con diagnosi di ipertensione
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="familiari_ipertensione" value="non_so" />
+              Non so
+            </label><br />
+
+            <label><strong>
+              3. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che hanno o hanno avuto il diabete (tipo 1, tipo 2 o gestazionale)?
+            </strong></label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_diabete" value="nessun_caso_noto" />
+              Nessun caso noto in famiglia
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_diabete" value="tipo1_familiare" />
+              Sì, diabete tipo 1 in un familiare
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_diabete" value="tipo2_familiare" />
+              Sì, diabete tipo 2 in un familiare
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_diabete" value="più_tipo2" />
+              Sì, più familiari con diabete tipo 2
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_diabete" value="gestazionale" />
+              Sì, caso di diabete gestazionale
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_diabete" value="non_so" />
+              Non so
+            </label><br />
+
+            <label><strong>
+              4. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che hanno avuto un tumore al seno, alle ovaie o altri tumori correlati (es. prostata)?
+            </strong></label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_tumori_familiari" value="nessun_caso_noto" />
+              Nessun caso noto in famiglia
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_tumori_familiari" value="madre_sorella_tumore_seno" />
+              Sì, madre o sorella con tumore al seno
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_tumori_familiari" value="tumore_mammario_bilaterale" />
+              Sì, tumore mammario bilaterale in famiglia
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_tumori_familiari" value="tumore_ovaie_endometrio_prostata" />
+              Sì, tumore ovarico, endometriale o prostatico in parenti stretti
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_tumori_familiari" value="mutazione_BRCA" />
+              Sì, mutazione BRCA1 o BRCA2 nota in famiglia
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_tumori_familiari" value="non_so" />
+              Non so
+            </label><br />
+
+            <label><strong>
+              5. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che hanno avuto una diagnosi di tumore del colon-retto o poliposi intestinale?
+            </strong></label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_colonretto" value="nessun_familiare" />
+              No, nessun familiare ha avuto diagnosi
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_colonretto" value="primo_grado_tumore_colonretto" />
+              Sì, un familiare di primo grado con diagnosi di tumore colorettale
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_colonretto" value="più_membri_famiglia" />
+              Sì, più membri della famiglia (anche di diverse generazioni)
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_colonretto" value="diagnosi_prima_50" />
+              Sì, diagnosi prima dei 50 anni in un familiare
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_colonretto" value="sindrome_genetica" />
+              Sì, è presente una sindrome genetica (es. Lynch, FAP)
+            </label><br />
+            
+            <label>
+              <input type="checkbox" name="parenti_colonretto" value="non_so" />
+              Non lo so
+            </label><br />
+
+            <label><strong>
+              6. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) a cui è stato diagnosticato il Morbo di Alzheimer o altra forma di demenza?
+            </strong></label><br />
+
+            <label><input type="checkbox" name="parenti_alzheimer" value="nessun_caso" /> No, nessun caso in famiglia</label><br />
+            <label><input type="checkbox" name="parenti_alzheimer" value="diagnosi_dopo_65" /> Sì, un familiare con diagnosi dopo i 65 anni</label><br />
+            <label><input type="checkbox" name="parenti_alzheimer" value="diagnosi_prima_65" /> Sì, un familiare con diagnosi prima dei 65 anni</label><br />
+            <label><input type="checkbox" name="parenti_alzheimer" value="più_casi_famiglia" /> Sì, più casi nella stessa famiglia (diverse generazioni)</label><br />
+            <label><input type="checkbox" name="parenti_alzheimer" value="mutazione_genetica" /> Sì, con mutazione genetica accertata (es. APP, PSEN1, PSEN2)</label><br />
+            <label><input type="checkbox" name="parenti_alzheimer" value="non_so" /> Non lo so</label><br />
+
+            <label><strong>
+              7. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) con diagnosi di depressione o disturbi dell’umore (es. depressione maggiore, distimia, disturbo bipolare)?
+            </strong></label><br />
+
+            <label><input type="checkbox" name="parenti_disturbi_umore" value="nessun_caso" /> No, nessun caso in famiglia</label><br />
+            <label><input type="checkbox" name="parenti_disturbi_umore" value="depressione_età_adulta" /> Sì, un familiare ha sofferto di depressione in età adulta</label><br />
+            <label><input type="checkbox" name="parenti_disturbi_umore" value="esordio_precoce" /> Sì, un familiare ha sofferto di depressione con esordio precoce (adolescenza o prima età adulta)</label><br />
+            <label><input type="checkbox" name="parenti_disturbi_umore" value="più_membri" /> Sì, più membri della famiglia con diagnosi ricorrenti</label><br />
+            <label><input type="checkbox" name="parenti_disturbi_umore" value="disturbo_umore" /> Sì, casi di disturbo dell’umore</label><br />
+            <label><input type="checkbox" name="parenti_disturbi_umore" value="non_so" /> Non lo so</label><br />
+
+            <label><strong>
+              8. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che soffrono o hanno sofferto di asma bronchiale o altre malattie respiratorie allergiche?
+            </strong></label><br />
+
+            <label><input type="checkbox" name="parenti_asma" value="nessun_caso" /> No, nessun caso in famiglia</label><br />
+            <label><input type="checkbox" name="parenti_asma" value="asma_occasionale" /> Sì, un familiare ha sofferto di asma occasionale</label><br />
+            <label><input type="checkbox" name="parenti_asma" value="asma_persistente" /> Sì, un familiare con asma persistente (diagnosi stabile)</label><br />
+            <label><input type="checkbox" name="parenti_asma" value="più_membri" /> Sì, più membri della famiglia hanno ricevuto diagnosi di asma</label><br />
+            <label><input type="checkbox" name="parenti_asma" value="episodi_acuti_gravi" /> Sì, ci sono stati episodi acuti gravi in famiglia</label><br />
+            <label><input type="checkbox" name="parenti_asma" value="non_so" /> Non lo so</label><br />
+
+            <label><strong>
+              9. Hai una storia familiare di malattie autoimmuni (es. tiroidite autoimmune, lupus, artrite reumatoide, psoriasi, malattie infiammatorie intestinali)?
+            </strong></label><br />
+
+            <label><input type="checkbox" name="parenti_autoimmuni" value="nessun_caso" /> No, nessun caso in famiglia</label><br />
+            <label><input type="checkbox" name="parenti_autoimmuni" value="uno_diagnosi" /> Sì, un familiare ha avuto una malattia autoimmune diagnosticata</label><br />
+            <label><input type="checkbox" name="parenti_autoimmuni" value="più_familiari" /> Sì, più familiari hanno avuto malattie autoimmuni diverse</label><br />
+            <label><input type="checkbox" name="parenti_autoimmuni" value="diverse_nella_stessa_persona" /> Sì, malattie autoimmuni diverse presenti nella stessa persona</label><br />
+            <label><input type="checkbox" name="parenti_autoimmuni" value="non_so" /> Non lo so</label><br />
+
+            <label><strong>
+              10. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che hanno avuto episodi di trombosi venosa profonda, embolia polmonare, ictus giovanile o aborti ricorrenti?
+            </strong></label><br />
+
+            <label><input type="checkbox" name="parenti_trombosi" value="nessun_caso" /> No, nessun caso in famiglia</label><br />
+            <label><input type="checkbox" name="parenti_trombosi" value="caso_isolato" /> Sì, un caso isolato di evento trombotico</label><br />
+            <label><input type="checkbox" name="parenti_trombosi" value="più_casi" /> Sì, più casi di eventi trombotici in famiglia</label><br />
+            <label><input type="checkbox" name="parenti_trombosi" value="giovane_età" /> Sì, evento trombotico in giovane età (&lt; 50 anni)</label><br />
+            <label><input type="checkbox" name="parenti_trombosi" value="sedi_inusuali" /> Sì, eventi trombotici in sedi inusuali (es. vena cerebrale)</label><br />
+            <label><input type="checkbox" name="parenti_trombosi" value="non_so" /> Non lo so</label><br />
+
+            <label><strong>
+              11. Hai parenti stretti (genitori, fratelli, sorelle, figli o nonni) che hanno avuto un infarto, angina o altri eventi cardiaci prima dei 55 anni (uomini) o prima dei 65 anni (donne)?
+            </strong></label><br />
+            <label><input type="checkbox" name="parenti_eventi_cardiaci_precoci" value="padre_prima_55" /> Sì, in mio padre (prima dei 55 anni)</label><br />
+            <label><input type="checkbox" name="parenti_eventi_cardiaci_precoci" value="madre_prima_65" /> Sì, in mia madre (prima dei 65 anni)</label><br />
+            <label><input type="checkbox" name="parenti_eventi_cardiaci_precoci" value="dopo_55_60" /> Sì, ma dopo i 55/60 anni</label><br />
+            <label><input type="checkbox" name="parenti_eventi_cardiaci_precoci" value="fratello_sorella" /> Sì, in un fratello o sorella</label><br />
+            <label><input type="checkbox" name="parenti_eventi_cardiaci_precoci" value="secondo_grado" /> Sì, in un parente di secondo grado (nonno/a, zio/a)</label><br />
+            <label><input type="checkbox" name="parenti_eventi_cardiaci_precoci" value="nessun_caso" /> No, non ci sono casi noti</label><br />
+            <label><input type="checkbox" name="parenti_eventi_cardiaci_precoci" value="non_so" /> Non lo so</label><br />
+
+            <label><strong>
+              12. Qual è stato l’esito della malattia cardiaca nei tuoi familiari affetti (se presenti)?
+            </strong></label><br />
+            <label><input type="checkbox" name="esito_malattia_cardiaca_familiare" value="ancora_in_vita" /> Ancora in vita</label><br />
+            <label><input type="checkbox" name="esito_malattia_cardiaca_familiare" value="deceduto" /> Deceduto a causa della patologia</label><br />
+            <label><input type="checkbox" name="esito_malattia_cardiaca_familiare" value="guarito" /> Guarito/Condizione stabilizzata</label><br />
+            <label><input type="checkbox" name="esito_malattia_cardiaca_familiare" value="nessun_caso" /> Non ho avuto familiari affetti da malattia cardiaca</label><br />
+            <label><input type="checkbox" name="esito_malattia_cardiaca_familiare" value="non_so" /> Non lo so</label><br />
+
+            <label><strong>
+              13. Hai perso un parente stretto in giovane età? Se sì, quanti anni aveva al momento del decesso?
+            </strong></label><br />
+            <label><input type="checkbox" name="parente_morto_giovane" value="si" /> Sì</label><br />
+            <label><input type="checkbox" name="parente_morto_giovane" value="no" /> No</label><br />
+            <label><input type="checkbox" name="parente_morto_giovane" value="non_so" /> Non so</label><br />
+
+
+            <label><strong>
+              14. Conosci la causa di morte di uno o più dei tuoi parenti stretti (genitori, fratelli, sorelle, figli o nonni)? Se sì, era legata a malattie cardiovascolari o morte improvvisa?
+            </strong></label><br />
+            <label><input type="checkbox" name="causa_morte_parenti" value="cardiovascolare" /> Sì, per cause cardiovascolari o morte improvvisa</label><br />
+            <label><input type="checkbox" name="causa_morte_parenti" value="altre_cause" /> Sì, per altre cause</label><br />
+            <label><input type="checkbox" name="causa_morte_parenti" value="no" /> No</label><br />
+            <label><input type="checkbox" name="causa_morte_parenti" value="non_so" /> Non lo so / Non ricordo</label><br />
+            <label>Se lo sai, specifica la causa:</label><br />
+            <textarea name="causa_morte_parenti_note" rows="3"></textarea><br />
+
+            <label><strong>
+              15. Ti è mai stata diagnosticata o è nota in famiglia la presenza di mutazioni genetiche ereditarie (es. BRCA1/2, HNPCC)?
+            </strong></label><br />
+            <label><input type="checkbox" name="mutazioni_genetiche" value="in_me" /> Sì, in me</label><br />
+            <label><input type="checkbox" name="mutazioni_genetiche" value="primo_grado" /> Sì, in un familiare di primo grado</label><br />
+            <label><input type="checkbox" name="mutazioni_genetiche" value="secondo_grado" /> Sì, in un familiare di secondo grado</label><br />
+            <label><input type="checkbox" name="mutazioni_genetiche" value="no" /> No</label><br />
+            <label><input type="checkbox" name="mutazioni_genetiche" value="non_so" /> Non so / Non ho mai effettuato test genetici</label><br />
+            <label>Se sì, quale:</label><br />
+            <input type="text" name="mutazioni_genetiche_note" />
+
+
+            <label><strong>
+              16. Hai parenti stretti che hanno vissuto oltre gli 80 anni senza patologie croniche rilevanti? (Seleziona tutte le opzioni che si applicano)</strong>
               </label><br />
+              
+              <label><input type="checkbox" name="longevità_famiglia[]" value="madre" /> Madre</label><br />
+              <label><input type="checkbox" name="longevità_famiglia[]" value="padre" /> Padre</label><br />
+              <label><input type="checkbox" name="longevità_famiglia[]" value="nonno_paterno" /> Nonno paterno</label><br />
+              <label><input type="checkbox" name="longevità_famiglia[]" value="nonna_paterna" /> Nonna paterna</label><br />
+              <label><input type="checkbox" name="longevità_famiglia[]" value="nonno_materno" /> Nonno materno</label><br />
+              <label><input type="checkbox" name="longevità_famiglia[]" value="nonna_materna" /> Nonna materna</label><br />
+              <label><input type="checkbox" name="longevità_famiglia[]" value="altro_parente_stretto" /> Altro parente stretto (es. zio/a, fratello/sorella)</label><br />
+              <label><input type="checkbox" name="longevità_famiglia[]" value="nessuno" /> Nessuno</label><br />
+              <label><input type="checkbox" name="longevità_famiglia[]" value="non_so" /> Non so / Informazione non disponibile</label><br />
             
-              <label>
-                <input type="checkbox" name="parenti_malattie_coronariche" value="maschio_sotto_55" />
-                Sì, in un parente di sesso maschile prima dei 55 anni
-              </label><br />
+            <label><strong>
+              17. Sei nato/a pretermine, cioè prima del completamento della 37ª settimana di gravidanza?
+            </strong></label><br />
+            <label><input type="checkbox" name="nascita_pretermine" value="termine" /> No, a termine (tra 37 e 42 settimane)</label><br />
+            <label><input type="checkbox" name="nascita_pretermine" value="estremamente" /> Sì, estremamente pretermine (&lt; 28 settimane)</label><br />
+            <label><input type="checkbox" name="nascita_pretermine" value="molto" /> Sì, molto pretermine (28–32 settimane)</label><br />
+            <label><input type="checkbox" name="nascita_pretermine" value="moderatamente" /> Sì, moderatamente pretermine (32–34 settimane)</label><br />
+            <label><input type="checkbox" name="nascita_pretermine" value="tardivo" /> Sì, pretermine tardivo (34–37 settimane)</label><br />
+            <label><input type="checkbox" name="nascita_pretermine" value="non_so" /> Non so</label><br />
+
+            <label><strong>
+              18. In che tipo di area hai vissuto prevalentemente negli ultimi 10 anni?
+            </strong></label><br />
+            <label><input type="checkbox" name="area_abitata" value="centro_urbano" /> Centro urbano (città)</label><br />
+            <label><input type="checkbox" name="area_abitata" value="zona_semi_urbana" /> Periferia o zona semi-urbana</label><br />
+            <label><input type="checkbox" name="area_abitata" value="zona_rurale" /> Campagna o zona rurale</label><br />
+            <label><input type="checkbox" name="area_abitata" value="costiera_montana" /> Località costiera o montana</label><br />
+
+            <!-- Domanda 16.1 -->
+            <label><strong>
+              19. Com’è la qualità dell’aria nella tua abitazione principale?</strong></label><br />
+            <label><input type="checkbox" name="qualita_aria_casa" value="buona" /> Buona (no muffa, polvere ridotta, aria fresca)</label><br />
+            <label><input type="checkbox" name="qualita_aria_casa" value="moderata" /> Moderata (qualche presenza di muffa o polvere)</label><br />
+            <label><input type="checkbox" name="qualita_aria_casa" value="scarsa" /> Scarsa (muffa visibile, polvere abbondante, aria stagnante)</label><br /><br />
+
+            <!-- Domanda 16.2 -->
+            <label><strong>
+              20. Utilizzi dispositivi per migliorare la qualità dell’aria in casa?</strong></label><br />
+            <label><input type="checkbox" name="dispositivi_aria" value="regolarmente" /> Sì, regolarmente</label><br />
+            <label><input type="checkbox" name="dispositivi_aria" value="occasionalmente" /> Sì, ma solo occasionalmente</label><br />
+            <label><input type="checkbox" name="dispositivi_aria" value="mai" /> No, mai utilizzati</label><br /><br />
+
+            <!-- Domanda 16.3 -->
+            <label><strong>
+              21. Che tipo di materiali prediligi per vestiti e tessuti della casa?</strong></label><br />
+            <label><input type="checkbox" name="materiali_tessuti" value="naturali" /> Tessuti naturali (cotone, lino, lana)</label><br />
+            <label><input type="checkbox" name="materiali_tessuti" value="misti" /> Tessuti misti (naturali + sintetici)</label><br />
+            <label><input type="checkbox" name="materiali_tessuti" value="sintetici" /> Tessuti prevalentemente sintetici</label><br /><br />
+
+            <!-- Domanda 16.4 -->
+            <label><strong>
+              22. Nella tua abitazione, che tipo di sistema di ventilazione utilizzi principalmente?</strong></label><br />
+            <label><input type="checkbox" name="ventilazione_casa" value="naturale" /> Ventilazione naturale (finestre aperte)</label><br />
+            <label><input type="checkbox" name="ventilazione_casa" value="climatizzazione" /> Aria condizionata o sistemi di climatizzazione</label><br />
+            <label><input type="checkbox" name="ventilazione_casa" value="ventilazione_meccanica" /> Ventilazione meccanica controllata</label><br />
+            <label><input type="checkbox" name="ventilazione_casa" value="nessuna" /> Nessun sistema specifico</label><br /><br />
+
+            <!-- Domanda 16.5 -->
+            <label><strong>
+              23. Utilizzi sistemi di filtraggio o depurazione dell’acqua potabile?</strong></label><br />
+            <label><input type="checkbox" name="filtraggio_acqua" value="depuratore" /> Sì, depuratore domestico o bottiglie filtrate</label><br />
+            <label><input type="checkbox" name="filtraggio_acqua" value="rubinetto" /> No, bevo acqua direttamente dal rubinetto</label><br />
+            <label><input type="checkbox" name="filtraggio_acqua" value="rubinetto" /> Utilizzo prevalentemente acqua in bottiglia (vetro)</label><br />
+            <label><input type="checkbox" name="filtraggio_acqua" value="bottiglia" /> Utilizzo prevalentemente acqua in bottiglia (plastica)</label><br /><br />
+
+            <!-- Domanda 16.6 -->
+            <label><strong>
+              24. Durante la giornata (escluso il tempo di sonno), quanto tempo trascorri in ambienti chiusi?</strong></label><br />
+            <label><input type="checkbox" name="tempo_ambienti_chiusi" value="meno_4h" /> Meno di 4 ore al giorno</label><br />
+            <label><input type="checkbox" name="tempo_ambienti_chiusi" value="tra_4_8h" /> Tra 4 e 8 ore al giorno</label><br />
+            <label><input type="checkbox" name="tempo_ambienti_chiusi" value="piu_8h" /> Più di 8 ore al giorno</label><br /><br />
+
+            <label><strong>
+              25. Conosci il tipo di parto con cui sei nato/a?</strong></label><br />
+              <label><input type="radio" name="tipo_parto" value="naturale" /> Parto naturale (senza bisogno di interventi come cesareo o ventosa)</label><br />
+              <label><input type="radio" name="tipo_parto" value="intervento_ostetrico" /> Parto con intervento ostetrico (es. cesareo, ventosa, forcipe)</label><br />
+              <label><input type="radio" name="tipo_parto" value="non_ricordo" /> Non so / Non ricordo</label><br /><br />
+
+              <label><strong>
+                26. Alla nascita, hai avuto complicazioni o problemi di salute?</strong></label><br />
+                <label><input type="radio" name="complicazioni_nascita" value="sì" /> Sì, sono state segnalate complicazioni o necessità di cure speciali</label><br />
+                <label><input type="radio" name="complicazioni_nascita" value="no" /> No, nessuna complicazione alla nascita</label><br />
+                <label><input type="radio" name="complicazioni_nascita" value="non_ricordo" /> Non so / Non ricordo</label><br /><br />
+
+            <label><strong>
+              27. Sei stato/a allattato/a esclusivamente al seno per i primi 6 mesi di vita?
+            </strong></label><br />
+            <label><input type="checkbox" name="allattamento" value="esclusivo" /> Sì, esclusivamente al seno</label><br />
+            <label><input type="checkbox" name="allattamento" value="parziale" /> No, solo in parte o con integrazione</label><br />
+            <label><input type="checkbox" name="allattamento" value="artificiale" /> No, alimentazione artificiale</label><br />
+            <label><input type="checkbox" name="allattamento" value="non_ricordo" /> Non so / Non ricordo</label><br />
+
+            <label><strong>
+              28. Durante l’infanzia hai raggiunto le tappe dello sviluppo nei tempi previsti?
+            </strong></label><br />
+            <label><input type="checkbox" name="tappe_sviluppo" value="regolari" /> Sì, tutte regolarmente</label><br />
+            <label><input type="checkbox" name="tappe_sviluppo" value="lievi_ritardi" /> Alcune con lieve ritardo</label><br />
+            <label><input type="checkbox" name="tappe_sviluppo" value="ritardi_significativi" /> Diverse con ritardo significativo</label><br />
+            <label><input type="checkbox" name="tappe_sviluppo" value="non_ricordo" /> Non so / Non ricordo</label><br />
+
+            <label><strong>
+              29. Hai avuto uno sviluppo puberale regolare (comparsa del seno, crescita dei peli pubici e inizio delle mestruazioni) nei tempi attesi? (solo per donne)
+            </strong></label><br />
+            <label><input type="checkbox" name="pubertà_femminile" value="regolare" /> Sì, tutto nei tempi previsti</label><br />
+            <label><input type="checkbox" name="pubertà_femminile" value="precoce" /> No, pubertà precoce (prima degli 8 anni)</label><br />
+            <label><input type="checkbox" name="pubertà_femminile" value="ritardata" /> No, pubertà ritardata (assenza di seno a 13 anni o mestruazioni dopo i 16)</label><br />
+            <label><input type="checkbox" name="pubertà_femminile" value="non_ricordo" /> Non ricordo</label><br />
+            <label><input type="checkbox" name="pubertà_femminile" value="uomo" /> Sono un uomo</label><br />
+
+            <label><strong>
+              30. Hai avuto uno sviluppo puberale regolare (aumento dei testicoli, comparsa dei peli, crescita del pene, cambiamento della voce) nei tempi attesi? (solo per uomini)
+            </strong></label><br />
+            <label><input type="checkbox" name="pubertà_maschile" value="regolare" /> Sì, lo sviluppo è avvenuto nei tempi normali</label><br />
+            <label><input type="checkbox" name="pubertà_maschile" value="precoce" /> No, ho avuto pubertà precoce (prima dei 9 anni)</label><br />
+            <label><input type="checkbox" name="pubertà_maschile" value="ritardata" /> No, ho avuto pubertà ritardata (assenza di sviluppo testicolare a 14 anni)</label><br />
+            <label><input type="checkbox" name="pubertà_maschile" value="non_ricordo" /> Non ricordo / Non so</label><br />
+            <label><input type="checkbox" name="pubertà_maschile" value="donna" /> Sono una donna</label><br />
+
+            <label><strong>
+              31. Hai completato i cicli scolastici nei tempi previsti e con un rendimento adeguato alle tue capacità?
+            </strong></label><br />
+            <label><input type="checkbox" name="percorso_scolastico" value="regolare" /> Sì, senza difficoltà significative</label><br />
+            <label><input type="checkbox" name="percorso_scolastico" value="difficoltà" /> Sì, ma con alcune difficoltà (es. bocciature, cambio scuola)</label><br />
+            <label><input type="checkbox" name="percorso_scolastico" value="irregolare" /> No, ho avuto un percorso scolastico irregolare</label><br />
+
+            <label><strong>
+              32. Il tuo ciclo mestruale è regolare, sia in termini di frequenza che di durata e quantità del flusso?
+            </strong></label><br />
+            <label><input type="checkbox" name="ciclo_mestruale" value="regolare" /> Sì, è regolare (ogni 21-35 giorni, dura 3-7 giorni, flusso moderato)</label><br />
+            <label><input type="checkbox" name="ciclo_mestruale" value="irregolare" /> No, ho cicli irregolari o assenti (amenorrea, oligomenorrea, polimenorrea)</label><br />
+            <label><input type="checkbox" name="ciclo_mestruale" value="doloroso" /> No, ho flusso abbondante o doloroso (menorragia, dismenorrea)</label><br />
+            <label><input type="checkbox" name="ciclo_mestruale" value="uomo" /> Sono un uomo</label><br />
+
+            <label><strong>
+              33. Hai già attraversato la menopausa?
+            </strong></label><br />
+            <label><input type="checkbox" name="menopausa" value="no" /> No, ho ancora il ciclo mestruale</label><br />
+            <label><input type="checkbox" name="menopausa" value="spontanea" /> Sì, la menopausa è avvenuta spontaneamente</label><br />
+            <label><input type="checkbox" name="menopausa" value="chirurgica" /> Sì, la menopausa è avvenuta in seguito a intervento chirurgico, radioterapia o chemioterapia</label><br />
+            <label><input type="checkbox" name="menopausa" value="non_so" /> Non so</label><br />
+            <label><input type="checkbox" name="menopausa" value="uomo" /> Sono un uomo</label><br />
+
+            <label><strong>
+              34. Hai avuto una o più gravidanze portate a termine tra la 37ª e la 42ª settimana di gestazione?
+            </strong></label><br />
+            <label><input type="checkbox" name="gravidanze_portate_a_termine" value="una" /> Sì, una</label><br />
+            <label><input type="checkbox" name="gravidanze_portate_a_termine" value="più" /> Sì, più di una</label><br />
+            <label><input type="checkbox" name="gravidanze_portate_a_termine" value="no" /> No</label><br />
+            <label><input type="checkbox" name="gravidanze_portate_a_termine" value="mai_avuto" /> Non ho mai avuto gravidanze</label><br />
+            <label><input type="checkbox" name="gravidanze_portate_a_termine" value="uomo" /> Sono un uomo</label><br />
             
-              <label>
-                <input type="checkbox" name="parenti_malattie_coronariche" value="femmina_sotto_65" />
-                Sì, in un parente di sesso femminile prima dei 65 anni
-              </label><br />
+            <label><strong>
+              35. Hai mai avuto uno o più aborti spontanei?</strong></label><br />
+            <label><input type="checkbox" name="aborti_spontanei" value="no" /> No</label><br />
+            <label><input type="checkbox" name="aborti_spontanei" value="uno" /> Sì, uno</label><br />
+            <label><input type="checkbox" name="aborti_spontanei" value="due" /> Sì, due</label><br />
+            <label><input type="checkbox" name="aborti_spontanei" value="più_di_due" /> Sì, più di due</label><br />
+            <label><input type="checkbox" name="aborti_spontanei" value="uomo" /> Sono un uomo</label><br /><br />
+
+            <label><strong>
+              36. Hai mai svolto il servizio militare e sei stato giudicato idoneo (abile) al momento della visita di selezione?</strong></label><br />
+            <label><input type="checkbox" name="servizio_militare_idoneità" value="idoneo_senza_limitazioni" /> Sì, idoneo senza limitazioni</label><br />
+            <label><input type="checkbox" name="servizio_militare_idoneità" value="idoneo_con_limitazioni" /> Sì, idoneo con limitazioni</label><br />
+            <label><input type="checkbox" name="servizio_militare_idoneità" value="non_idoneo" /> No, non idoneo</label><br />
+            <label><input type="checkbox" name="servizio_militare_idoneità" value="non_svolto" /> Non ho svolto il servizio militare</label><br /><br />
+
+            <label><strong>
+              37. Sei mai stato riformato (dichiarato non idoneo) al servizio militare per motivi fisici o psicologici?</strong></label><br />
+            <label><input type="checkbox" name="riformato_militare" value="motivi_fisici" /> Sì, per motivi fisici</label><br />
+            <label><input type="checkbox" name="riformato_militare" value="motivi_psicologici" /> Sì, per motivi psicologici</label><br />
+            <label><input type="checkbox" name="riformato_militare" value="entrambi" /> Sì, per entrambi</label><br />
+            <label><input type="checkbox" name="riformato_militare" value="idoneo" /> No, idoneo</label><br />
+            <label><input type="checkbox" name="riformato_militare" value="non_svolto" /> Non ho svolto il servizio militare</label><br /><br />
+
+            <label><strong>
+              38. Il tuo partner o coniuge gode attualmente di buona salute generale?</strong></label><br />
+            <label><input type="checkbox" name="salute_partner" value="buona_salute" /> Sì, è in buona salute</label><br />
+            <label><input type="checkbox" name="salute_partner" value="patologia_gestita" /> Sì, ma con qualche patologia cronica gestita</label><br />
+            <label><input type="checkbox" name="salute_partner" value="patologie_significative" /> No, ha patologie significative</label><br />
+            <label><input type="checkbox" name="salute_partner" value="non_ho_partner" /> Non ho un partner/coniuge</label><br /><br />
+
+            <label><strong>
+              39. I tuoi figli godono attualmente di buona salute generale e sviluppo adeguato all’età?</strong></label><br />
+            <label><input type="checkbox" name="salute_figli" value="buona_salute" /> Sì, sono in buona salute e si sviluppano regolarmente</label><br />
+            <label><input type="checkbox" name="salute_figli" value="patologia_gestita" /> Sì, ma con patologie croniche ben gestite</label><br />
+            <label><input type="checkbox" name="salute_figli" value="problemi_significativi" /> No, presentano patologie significative o ritardi nello sviluppo</label><br />
+            <label><input type="checkbox" name="salute_figli" value="non_ho_figli" /> Non ho figli</label><br /><br />
+          </div>     
+
+
+            <hr>
+            <div class="step" id="step2">
+              <h2>STORIA CLINICA, CHIRURGICA, TRAUMI ED INTERVENTI</h2>
+              <h5>Se disponi di un test o di un’analisi recente relativa a {STORIA CLINICA, CHIRURGICA, TRAUMI ED INTERVENTI}, puoi inviarla: ci aiuterà a elaborare un report ancora più preciso e personalizzato.</h5>
+
+              <label><strong>
+                40. Hai mai ricevuto una diagnosi di ipotiroidismo?</strong></label><br />
+              <label><input type="checkbox" name="ipotiroidismo" value="no" /> No, mai diagnosticato</label><br />
+              <label><input type="checkbox" name="ipotiroidismo" value="primario" /> Sì, ipotiroidismo primario (tiroidite di Hashimoto, post-chirurgico, ecc.)</label><br />
+              <label><input type="checkbox" name="ipotiroidismo" value="secondario" /> Sì, ipotiroidismo secondario o terziario (ipofisi/ipotalamo)</label><br />
+              <label><input type="checkbox" name="ipotiroidismo" value="non_so" /> Non so / In attesa di valutazione endocrinologica</label><br /><br />
+  
+              <label><strong>
+                41. Hai mai ricevuto una diagnosi di ipertiroidismo?</strong></label><br />
+              <label><input type="checkbox" name="ipertiroidismo" value="no" /> No, mai diagnosticato</label><br />
+              <label><input type="checkbox" name="ipertiroidismo" value="attualmente_in_trattamento" /> Sì, attualmente in trattamento</label><br />
+              <label><input type="checkbox" name="ipertiroidismo" value="trattato_risolto" /> Sì, trattato in passato e risolto</label><br />
+              <label><input type="checkbox" name="ipertiroidismo" value="non_trattato" /> Sì, ma non sto seguendo alcun trattamento</label><br />
+              <label><input type="checkbox" name="ipertiroidismo" value="non_so" /> Non so / In attesa di valutazione endocrinologica</label><br /><br />
+  
+              <label><strong>
+                42. Ti è mai stato diagnosticato un nodulo alla tiroide?</strong></label><br />
+              <label><input type="checkbox" name="nodulo_tiroide" value="no" /> No</label><br />
+              <label><input type="checkbox" name="nodulo_tiroide" value="benigno" /> Sì, nodulo benigno e monitorato</label><br />
+              <label><input type="checkbox" name="nodulo_tiroide" value="sospetto" /> Sì, nodulo sospetto/in attesa di ulteriori accertamenti</label><br />
+              <label><input type="checkbox" name="nodulo_tiroide" value="maligno" /> Sì, nodulo maligno (carcinoma tiroideo)</label><br />
+              <label><input type="checkbox" name="nodulo_tiroide" value="non_so" /> Non so / mai fatto controlli specifici</label><br /><br />
+  
+              <label><strong>
+                43. Ti è mai stata diagnosticata una forma di asma bronchiale o hai mai avuto episodi ricorrenti di respiro sibilante, tosse secca o fiato corto?</strong></label><br />
+              <label><input type="checkbox" name="asma" value="mai" /> No, mai avuto sintomi</label><br />
+              <label><input type="checkbox" name="asma" value="diagnosticata_in_trattamento" /> Sì, asma diagnosticata e attualmente in trattamento</label><br />
+              <label><input type="checkbox" name="asma" value="episodi_non_diagnosticati" /> Sì, episodi ricorrenti ma non diagnosticati</label><br />
+              <label><input type="checkbox" name="asma" value="passato_non_sintomatico" /> Sì, in passato ma non più sintomatico</label><br />
+              <label><input type="checkbox" name="asma" value="non_so" /> Non so / in attesa di valutazione</label><br /><br />
+  
+              <label>Se sì:</label><br />
+              <label>Utilizzi inalatori o farmaci per l’asma?</label>
+              <select name="farmaci_asma">
+                <option value="">-- Seleziona --</option>
+                <option value="si">Sì</option>
+                <option value="no">No</option>
+              </select><br />
+              <label>I sintomi peggiorano con lo sforzo fisico o durante la notte?</label>
+              <select name="sintomi_asma">
+                <option value="">-- Seleziona --</option>
+                <option value="si">Sì</option>
+                <option value="no">No</option>
+              </select><br />
+              <label>Hai effettuato spirometria o test respiratori negli ultimi 12 mesi?</label>
+              <select name="spirometria_12_mesi">
+                <option value="">-- Seleziona --</option>
+                <option value="si">Sì</option>
+                <option value="no">No</option>
+              </select><br /><br />
+  
+              <label><strong>
+                44. Hai mai ricevuto una diagnosi di BPCO (bronchite cronica, enfisema) o presenti sintomi respiratori cronici?</strong></label><br />
+              <label><input type="checkbox" name="bpco" value="nessuna_diagnosi" /> No, nessuna diagnosi né sintomi</label><br />
+              <label><input type="checkbox" name="bpco" value="diagnosi_bpco" /> Sì, ho una diagnosi di BPCO</label><br />
+              <label><input type="checkbox" name="bpco" value="sintomi_senza_diagnosi" /> Presento sintomi cronici ma non ho una diagnosi</label><br />
+              <label><input type="checkbox" name="bpco" value="ex_fumatore_con_sintomi" /> Ex fumatore con sintomi respiratori</label><br />
+              <label><input type="checkbox" name="bpco" value="non_so" /> Non so / in attesa di accertamenti</label><br /><br />
+  
+               <label>Se sì:</label><br />
+               <label>Hai mai effettuato una spirometria?</label>
+               <select name="spirometria_bpco">
+                 <option value="">-- Seleziona --</option>
+                 <option value="si">Sì</option>
+                 <option value="no">No</option>
+               </select><br />
+               <label>Attualmente fumi sigarette o altri prodotti del tabacco?</label>
+               <select name="fumo_attuale">
+                 <option value="">-- Seleziona --</option>
+                 <option value="si">Sì</option>
+                 <option value="no">No</option>
+                 <option value="ex_fumatore">Ex fumatore</option>
+               </select><br />
+               <label>Hai difficoltà respiratorie nello svolgimento di attività quotidiane (camminare, salire le scale)?</label>
+               <select name="difficoltà_respiratorie_quotidiane">
+                 <option value="">-- Seleziona --</option>
+                 <option value="si">Sì</option>
+                 <option value="no">No</option>
+               </select><br /><br />
+  
+               <label><strong>
+                45. Hai mai avuto una diagnosi di polmonite con necessità di terapia antibiotica o ricovero?</strong></label><br />
+               <label><input type="checkbox" name="polmonite" value="mai" /> No, mai</label><br />
+               <label><input type="checkbox" name="polmonite" value="una_volta" /> Sì, una sola volta</label><br />
+               <label><input type="checkbox" name="polmonite" value="piu_volte" /> Sì, più di una volta</label><br />
+               <label><input type="checkbox" name="polmonite" value="ricovero" /> Sì, con ricovero ospedaliero</label><br />
+               <label><input type="checkbox" name="polmonite" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+               <label><strong>
+                46. Hai condizioni che aumentano il rischio di polmonite (BPCO, diabete, età >65, fumo, immunodepressione)?</strong></label><br />
+               <select name="rischio_polmonite">
+                 <option value="">-- Seleziona --</option>
+                 <option value="si">Sì</option>
+                 <option value="no">No</option>
+               </select><br /><br />
+  
+               <label><strong>
+                47. Hai effettuato il vaccino antinfluenzale?</strong></label><br />
+                <select name="vaccino_pneumo_influ">
+                  <option value="">-- Seleziona --</option>
+                  <option value="si_recentemente">Sì, negli ultimi 2 anni</option>
+                  <option value="si_passato">Sì, in passato ma non recentemente</option>
+                  <option value="no">No, mai effettuato</option>
+                  <option value="non_so">Non so / Non ricordo</option>
+                </select><br /><br />
+  
+               <label><strong>
+                48. Hai avuto episodi ricorrenti o prolungati di diarrea negli ultimi 3 mesi?</strong></label><br />
+               <label><input type="checkbox" name="diarrea_3_mesi" value="no" /> No, mai</label><br />
+               <label><input type="checkbox" name="diarrea_3_mesi" value="episodio_acuto" /> Sì, un episodio acuto (durato meno di 4 giorni)</label><br />
+               <label><input type="checkbox" name="diarrea_3_mesi" value="episodi_brevi" /> Sì, episodi brevi (durati 1-3 settimane)</label><br />
+               <label><input type="checkbox" name="diarrea_3_mesi" value="diarrea_cronica" /> Sì, diarrea cronica (da più di 4 settimane)</label><br />
+               <label><input type="checkbox" name="diarrea_3_mesi" value="non_so" /> Non so</label><br /><br />  
+  
+  
+               <label>Se sì:</label><br />
+                <label>Hai notato la presenza di sangue, muco o pus nelle feci?</label>
+                <select name="sangue_feci">
+                  <option value="">-- Seleziona --</option>
+                  <option value="si">Sì</option>
+                  <option value="no">No</option>
+                </select><br />
+                <label>Hai perso peso involontariamente?</label>
+                <select name="perdita_peso">
+                  <option value="">-- Seleziona --</option>
+                  <option value="si">Sì</option>
+                  <option value="no">No</option>
+                </select><br />
+                <label>Hai associato gli episodi a farmaci, alimenti specifici o stress?</label>
+                <select name="associazione_diarrea">
+                  <option value="">-- Seleziona --</option>
+                  <option value="si">Sì</option>
+                  <option value="no">No</option>
+                </select><br />
+                <label>Hai mai effettuato uno dei seguenti esami?</label>
+                <select name="esami_feci">
+                  <option value="">-- Seleziona --</option>
+                  <option value="coprocoltura">Coprocoltura</option>
+                  <option value="calprotectina">Calprotectina fecale</option>
+                  <option value="test_celiachia">Test per la celiachia</option>
+                  <option value="altro">Altro (specifica sotto)</option>
+                  <textarea name="altri_esami" rows="4" placeholder="Es. Dosaggio della Zonulina fecale"></textarea><br /><br />
+                </select><br /><br />
+  
+                <label><strong>
+                  49. Hai mai avuto il morbillo?</strong></label><br />
+                <label><input type="checkbox" name="morbillo" value="bambino_conferma_medico" /> Sì, confermata dal medico</label><br />
+                <label><input type="checkbox" name="morbillo" value="non_certo" /> Sì, ma non sono certo/a</label><br />
+                <label><input type="checkbox" name="morbillo" value="mai_avuto" /> No, non l’ho mai avuto</label><br />
+                <label><input type="checkbox" name="morbillo" value="non_ricordo" /> Non so / Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  50. Hai avuto la varicella?</strong></label><br />
+                <label><input type="checkbox" name="varicella" value="confermata_medico" /> Sì, confermata dal medico</label><br />
+                <label><input type="checkbox" name="varicella" value="non_sicuro" /> Sì, ma non sono certo/a</label><br />
+                <label><input type="checkbox" name="varicella" value="mai_avuta" /> No, non l’ho mai avuta</label><br />
+                <label><input type="checkbox" name="varicella" value="non_ricordo" /> Non so / Non ricordo</label><br /><br />
+  
+                <label>Il decorso è stato complicato (es. febbre alta, infezioni cutanee, encefalite, cicatrici visibili)?</label>
+                <select name="decorso_varicella">
+                  <option value="">-- Seleziona --</option>
+                  <option value="si">Sì</option>
+                  <option value="no">No</option>
+                  <option value="non_so">Non so</option>
+                </select><br /><br />
+  
+                <label><strong>
+                  51. Hai mai avuto la scarlattina?</strong></label><br />
+                <label><input type="checkbox" name="scarlattina" value="diagnosticata_medico" /> Sì, diagnosticata da un medico</label><br />
+                <label><input type="checkbox" name="scarlattina" value="senza_conferma" /> Sì, ma senza conferma medica</label><br />
+                <label><input type="checkbox" name="scarlattina" value="mai_avuta" /> No, non l’ho mai avuta</label><br />
+                <label><input type="checkbox" name="scarlattina" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label>Ricordi se il decorso è stato complicato (es. febbre molto alta, ricovero, complicanze renali o articolari)?</label>
+                <select name="decorso_scarlattina">
+                  <option value="">-- Seleziona --</option>
+                  <option value="si">Sì</option>
+                  <option value="no">No</option>
+                  <option value="non_so">Non so</option>
+                </select><br /><br />
+  
+                <label><strong>
+                  52. Hai mai avuto la rosolia?</strong></label><br />
+                <label><input type="checkbox" name="rosolia" value="confermata_medico" /> Sì, confermata da un medico</label><br />
+                <label><input type="checkbox" name="rosolia" value="senza_conferma" /> Sì, ma senza conferma medica</label><br />
+                <label><input type="checkbox" name="rosolia" value="mai_avuta" /> No, non l’ho mai avuta</label><br />
+                <label><input type="checkbox" name="rosolia" value="non_ricordo" /> Non so / Non ricordo</label><br /><br />
+  
+                <label>Se sei una donna:</label><br />
+                <label>Sei vaccinata contro la rosolia o hai eseguito il test di immunità (IgG)?</label>
+                <select name="vaccino_test_rosolia">
+                  <option value="">-- Seleziona --</option>
+                  <option value="vaccinata">Sì, vaccinata</option>
+                  <option value="test_immune">Sì, ho eseguito il test e sono immune</option>
+                  <option value="no_non_so">No / Non so</option>
+                </select><br /><br />
+  
+                <label><strong>
+                  53. Hai mai contratto la pertosse (tosse convulsa) durante l’infanzia?</strong></label><br />
+                <label><input type="checkbox" name="pertosse" value="diagnosticata_medico" /> Sì, diagnosticata da un medico</label><br />
+                <label><input type="checkbox" name="pertosse" value="non_diagnosticata" /> Sì, ma non diagnosticata ufficialmente</label><br />
+                <label><input type="checkbox" name="pertosse" value="no" /> No</label><br />
+                <label><input type="checkbox" name="pertosse" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  54. Hai mai contratto la difterite durante l’infanzia o l’adolescenza?</strong></label><br />
+                <label><input type="checkbox" name="difterite" value="confermata_diagnosi" /> Sì, confermata da diagnosi medica</label><br />
+                <label><input type="checkbox" name="difterite" value="no" /> No</label><br />
+                <label><input type="checkbox" name="difterite" value="non_ricordo" /> Non so / Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  55. Hai completato il ciclo vaccinale previsto contro la difterite (DTPa o DTP)?</strong></label><br />
+                <label><input type="checkbox" name="vaccino_difterite" value="bambino" /> Sì, da bambino</label><br />
+                <label><input type="checkbox" name="vaccino_difterite" value="richiami_adulto" /> Sì, anche con richiami in età adulta</label><br />
+                <label><input type="checkbox" name="vaccino_difterite" value="no" /> No</label><br />
+                <label><input type="checkbox" name="vaccino_difterite" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  56. Hai mai ricevuto una diagnosi di epatite B o sei risultato positivo al test per HBsAg?</strong></label><br />
+                <label><input type="checkbox" name="epatite_b_diagnosi" value="positivo_cronico" /> Sì, attualmente positivo (cronico)</label><br />
+                <label><input type="checkbox" name="epatite_b_diagnosi" value="risolto" /> Sì, in passato ma risolto</label><br />
+                <label><input type="checkbox" name="epatite_b_diagnosi" value="mai" /> No, mai</label><br />
+                <label><input type="checkbox" name="epatite_b_diagnosi" value="non_so" /> Non so / Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  57. Hai effettuato il vaccino contro l’epatite B?</strong></label><br />
+                <label><input type="checkbox" name="vaccino_epatite_b" value="bambino" /> Sì, da bambino (vaccinazione obbligatoria)</label><br />
+                <label><input type="checkbox" name="vaccino_epatite_b" value="adulto" /> Sì, da adulto</label><br />
+                <label><input type="checkbox" name="vaccino_epatite_b" value="no" /> No</label><br />
+                <label><input type="checkbox" name="vaccino_epatite_b" value="non_so" /> Non so / Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  58. Hai mai avuto la mononucleosi infettiva (nota anche come “malattia del bacio”)?</strong></label><br />
+                <label><input type="checkbox" name="mononucleosi" value="confermata" /> Sì, confermata con esami del sangue</label><br />
+                <label><input type="checkbox" name="mononucleosi" value="non_confermata" /> Sì, ma senza conferma diagnostica</label><br />
+                <label><input type="checkbox" name="mononucleosi" value="no" /> No</label><br />
+                <label><input type="checkbox" name="mononucleosi" value="non_so" /> Non so / Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  59. Hai mai avuto una diagnosi di tubercolosi (TBC) o sei mai risultato positivo al test Mantoux o Quantiferon?</strong></label><br />
+                <label><input type="checkbox" name="tubercolosi" value="malattia_conclusa" /> Sì, ho avuto la TBC e ho completato la terapia</label><br />
+                <label><input type="checkbox" name="tubercolosi" value="test_positivo_senza_malattia" /> Sì, test positivo ma senza malattia attiva</label><br />
+                <label><input type="checkbox" name="tubercolosi" value="no" /> No</label><br />
+                <label><input type="checkbox" name="tubercolosi" value="non_so" /> Non so / Non ricordo</label><br /><br />
+  
+                <label><strong>60. Hai mai contratto il COVID-19 (SARS-CoV-2)?</strong></label><br />
+                <label><input type="checkbox" name="covid" value="sintomi_lievi" /> Sì, con sintomi lievi</label><br />
+                <label><input type="checkbox" name="covid" value="sintomi_moderati_gravi" /> Sì, con sintomi moderati/gravi ma senza ricovero</label><br />
+                <label><input type="checkbox" name="covid" value="ricovero" /> Sì, ho avuto un ricovero ospedaliero</label><br />
+                <label><input type="checkbox" name="covid" value="terapia_intensiva" /> Sì, ho avuto un ricovero in terapia intensiva</label><br />
+                <label><input type="checkbox" name="covid" value="no" /> No</label><br />
+                <label><input type="checkbox" name="covid" value="non_sicuro" /> Non sono sicuro/a</label><br /><br />
+
+                <label><strong>61. Se hai avuto il COVID, hai avuto sequele o complicazioni persistenti (Long COVID)?</strong></label><br />
+                <label><input type="checkbox" name="sequele_covid" value="no" /> No, nessuna</label><br />
+                <label><input type="checkbox" name="sequele_covid" value="risolte" /> Sì, ma si sono risolte</label><br />
+                <label><input type="checkbox" name="sequele_covid" value="persistenti" /> Sì, ancora persistenti</label><br />
+                <label><input type="checkbox" name="sequele_covid" value="non_so" /> Non so / Non ricordo</label><br />
+
+                <label>Se hai avuto complicazioni, quali? (es. stanchezza cronica, problemi respiratori, brain fog, perdita olfatto/gusto...)</label><br />
+                <textarea name="complicanze_covid_descrizione" rows="3" placeholder="Scrivi qui le complicazioni post-COVID..."></textarea><br /><br />
+
+                <label><strong>62. Sei stato vaccinato contro il COVID-19?</strong></label><br />
+                <label><input type="checkbox" name="vaccino_covid" value="si" /> Sì</label><br />
+                <label><input type="checkbox" name="vaccino_covid" value="no" /> No</label><br />
+                <label><input type="checkbox" name="vaccino_covid" value="parziale" /> Solo alcune dosi</label><br />
+                <label><input type="checkbox" name="vaccino_covid" value="non_so" /> Non so / Non ricordo</label><br /><br />
+
+                <label>Se sì, che tipo di vaccino hai ricevuto? (es. Pfizer, Moderna, AstraZeneca, Johnson...)</label><br />
+                <input type="text" name="tipo_vaccino_covid" placeholder="Es. Pfizer, Moderna, ecc."><br /><br />
+
+                <label>Quante dosi hai ricevuto?</label><br />
+                <select name="dosi_vaccino_covid">
+                  <option value="">-- Seleziona --</option>
+                  <option value="1">1 dose</option>
+                  <option value="2">2 dosi</option>
+                  <option value="3">3 dosi</option>
+                  <option value="4_plus">4 o più dosi</option>
+                </select><br /><br />
+  
+                <label><strong>
+                  63. Ti è mai stata diagnosticata un’infezione da HIV o ti è mai stato consigliato di fare un test per l’HIV?</strong></label><br />
+                <label><input type="checkbox" name="hiv_test" value="positivo" /> Sì, sono risultato/a positivo/a</label><br />
+                <label><input type="checkbox" name="hiv_test" value="negativo" /> Sì, ma il test è risultato negativo</label><br />
+                <label><input type="checkbox" name="hiv_test" value="no" /> No</label><br /><br />
+  
+                <label>Se sì, stai attualmente seguendo una terapia antiretrovirale (HAART)?</label><br />
+                <label><input type="checkbox" name="terapia_antiretrovirale" value="regolare" /> Sì, in modo regolare</label><br />
+                <label><input type="checkbox" name="terapia_antiretrovirale" value="difficoltà" /> Sì, ma con difficoltà di aderenza</label><br />
+                <label><input type="checkbox" name="terapia_antiretrovirale" value="non_iniziato" /> No, non ho iniziato ancora</label><br /><br />
+  
+                <label><strong>
+                  64. Hai mai riportato un trauma cranico significativo (ad es. a seguito di incidente, caduta o trauma sportivo)?</strong></label><br />
+                <label><input type="checkbox" name="trauma_cranico" value="con_perdita" /> Sì, con perdita di coscienza</label><br />
+                <label><input type="checkbox" name="trauma_cranico" value="senza_perdita" /> Sì, senza perdita di coscienza</label><br />
+                <label><input type="checkbox" name="trauma_cranico" value="no" /> No</label><br />
+                <label><input type="checkbox" name="trauma_cranico" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label>Se sì, dopo il trauma hai mai avuto:</label><br />
+                <label><input type="checkbox" name="post_trauma_sintomi" value="convulsioni" /> Convulsioni o crisi epilettiche</label><br />
+                <label><input type="checkbox" name="post_trauma_sintomi" value="disturbi_cognitivi" /> Disturbi cognitivi o della memoria</label><br />
+                <label><input type="checkbox" name="post_trauma_sintomi" value="mal_di_testa" /> Mal di testa ricorrenti o cambiamenti del comportamento</label><br /><br />
+  
+                <label><strong>
+                  65. Hai mai subito fratture ossee o traumi ortopedici significativi (es. da incidente, caduta, sport)?</strong></label><br />
+                <label><input type="checkbox" name="fratture_traumi_ortopedici" value="con_intervento" /> Sì, con intervento chirurgico</label><br />
+                <label><input type="checkbox" name="fratture_traumi_ortopedici" value="senza_intervento" /> Sì, senza intervento chirurgico</label><br />
+                <label><input type="checkbox" name="fratture_traumi_ortopedici" value="no" /> No</label><br />
+                <label><input type="checkbox" name="fratture_traumi_ortopedici" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label>Se sì, quali aree del corpo sono state coinvolte?</label><br />
+                <textarea name="aree_traumi" rows="3" placeholder="Es. braccio, gamba, bacino..."></textarea><br /><br />
+  
+                <label><strong>
+                  66. Hai mai avuto un trauma toracico importante (es. incidente stradale, caduta, ferita penetrante) che ha richiesto accertamenti o cure mediche?</strong></label><br />
+                <label><input type="checkbox" name="trauma_toracico" value="con_complicanze" /> Sì, con complicanze (es. pneumotorace, emotorace)</label><br />
+                <label><input type="checkbox" name="trauma_toracico" value="senza_complicanze" /> Sì, senza complicanze significative</label><br />
+                <label><input type="checkbox" name="trauma_toracico" value="no" /> No</label><br />
+                <label><input type="checkbox" name="trauma_toracico" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  67. Hai mai subito un trauma addominale (es. incidente stradale, colpo diretto, ferita penetrante) che ha richiesto accertamenti medici o interventi chirurgici?</strong></label><br />
+                <label><input type="checkbox" name="trauma_addominale" value="con_lesioni" /> Sì, con lesioni agli organi interni</label><br />
+                <label><input type="checkbox" name="trauma_addominale" value="senza_lesioni" /> Sì, ma senza lesioni rilevanti</label><br />
+                <label><input type="checkbox" name="trauma_addominale" value="no" /> No</label><br />
+                <label><input type="checkbox" name="trauma_addominale" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  68. Hai mai subito un’appendicectomia (rimozione dell’appendice a causa di appendicite)?</strong></label><br />
+                <label><input type="checkbox" name="appendicectomia" value="si" /> Sì</label><br />
+                <label><input type="checkbox" name="appendicectomia" value="no" /> No</label><br />
+                <label><input type="checkbox" name="appendicectomia" value="non_ricordo" /> Non ricordo</label><br />
+                <label>Se sì, ricordi se ci sono state complicanze post-operatorie (infezioni, ascessi, ecc.)?</label><br />
+                <select name="complicanze_appendicectomia">
+                  <option value="">-- Seleziona --</option>
+                  <option value="si">Sì</option>
+                  <option value="no">No</option>
+                  <option value="non_so">Non so</option>
+                </select><br /><br />
+  
+                <label><strong>
+                  69. Hai mai subito una tonsillectomia (rimozione delle tonsille)?</strong></label><br />
+                <label><input type="checkbox" name="tonsillectomia" value="si" /> Sì</label><br />
+                <label><input type="checkbox" name="tonsillectomia" value="no" /> No</label><br />
+                <label><input type="checkbox" name="tonsillectomia" value="non_ricordo" /> Non ricordo</label><br />
+                <label>Se sì, ricordi il motivo dell’intervento?</label><br />
+                <select name="motivo_tonsillectomia">
+                  <option value="">-- Seleziona --</option>
+                  <option value="infezioni_ricorrenti">Infezioni ricorrenti (più di 5 all’anno)</option>
+                  <option value="apnee_russamento">Apnee notturne o russamento grave</option>
+                  <option value="altro">Altro</option>
+                  <option value="non_ricordo">Non ricordo</option>
+                </select><br /><br />
+  
+                <label><strong>
+                  70. Hai mai subito un intervento di colecistectomia (rimozione della colecisti)?</strong></label><br />
+                <label><input type="checkbox" name="colecistectomia" value="si" /> Sì</label><br />
+                <label><input type="checkbox" name="colecistectomia" value="no" /> No</label><br />
+                <label><input type="checkbox" name="colecistectomia" value="non_ricordo" /> Non ricordo</label><br />
+                <label>Se sì, ricordi il motivo dell’intervento?</label><br />
+                <select name="motivo_colecistectomia">
+                  <option value="">-- Seleziona --</option>
+                  <option value="coliche_calcoli">Coliche biliari o calcoli</option>
+                  <option value="colecistite">Colecistite (infiammazione della colecisti)</option>
+                  <option value="altro">Altro</option>
+                  <option value="non_ricordo">Non ricordo</option>
+                </select><br /><br />
+  
+                <label><strong>
+                  71. Hai mai subito un intervento di riparazione dell’ernia inguinale?</strong></label><br />
+                <label><input type="checkbox" name="ernia_inguinale" value="si" /> Sì</label><br />
+                <label><input type="checkbox" name="ernia_inguinale" value="recidive" /> Sì, con recidive</label><br />
+                <label><input type="checkbox" name="ernia_inguinale" value="dolori_occasionali" /> Sì ed ho ancora dolori occasionali</label><br />
+                <label><input type="checkbox" name="ernia_inguinale" value="no" /> No</label><br />
+                <label><input type="checkbox" name="ernia_inguinale" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  72. Hai mai subito un intervento di chirurgia per la cataratta (sostituzione del cristallino)?</strong></label><br />
+                <label><input type="checkbox" name="chirurgia_cataratta" value="un_occhio" /> Sì, in un occhio</label><br />
+                <label><input type="checkbox" name="chirurgia_cataratta" value="entrambi_occhi" /> Sì, in entrambi gli occhi</label><br />
+                <label><input type="checkbox" name="chirurgia_cataratta" value="no" /> No</label><br />
+                <label><input type="checkbox" name="chirurgia_cataratta" value="non_ricordo" /> Non ricordo</label><br /><br />
+  
+                <label><strong>
+                  73. Hai mai subito un intervento di prostatectomia (asportazione parziale o totale della prostata)?</strong></label><br />
+                <label><input type="checkbox" name="prostatectomia" value="no" /> No</label><br />
+                <label><input type="checkbox" name="prostatectomia" value="ipertrofia" /> Sì, per ipertrofia prostatica benigna</label><br />
+                <label><input type="checkbox" name="prostatectomia" value="tumore" /> Sì, per tumore della prostata</label><br />
+                <label><input type="checkbox" name="prostatectomia" value="non_ricordo" /> Non ricordo / Non so</label><br />
+                <label>Se sì, Hai riscontrato complicanze dopo l’intervento?</label><br />
+                <select name="complicanze_prostatectomia">
+                  <option value="">-- Seleziona --</option>
+                  <option value="nessuna">Nessuna</option>
+                  <option value="incontinenza">Incontinenza urinaria</option>
+                  <option value="disfunzione_erettile">Disfunzione erettile</option>
+                  <option value="altri_disturbi">Altri disturbi urinari o sessuali</option>
+                </select><br /><br />  
+            </div>
+                <hr>
+                <div class="step" id="step3">
+                  <h2>DIAGNOSTICA E BIOCHIMICA</h2>
+                  <h5>Se disponi di un test o di un’analisi recente relativa a {DIAGNOSTICA E BIOCHIMICA}, puoi inviarla: ci aiuterà a elaborare un report ancora più preciso e personalizzato.</h5>
+        
+              <label><strong>
+                74. Hai mai avuto valori elevati di pressione arteriosa (ipertensione) o ti è stato prescritto un monitoraggio pressorio?</strong></label><br />
+              <label><input type="checkbox" name="ipertensione" value="no" /> No, mai rilevati valori anomali</label><br />
+              <label><input type="checkbox" name="ipertensione" value="occasionale" /> Sì, occasionalmente valori elevati</label><br />
+              <label><input type="checkbox" name="ipertensione" value="diagnosi" /> Sì, ho ricevuto diagnosi di ipertensione</label><br />
+              <label><input type="checkbox" name="ipertensione" value="non_so" /> Non so / mai misurata</label><br />
+              <label>Se sì, Stai seguendo un trattamento o delle indicazioni per la pressione?</label><br />
+              <select name="trattamento_ipertensione">
+                <option value="">-- Seleziona --</option>
+                <option value="nessuno">No</option>
+                <option value="farmaci">Sì, con farmaci antipertensivi</option>
+                <option value="dieta">Sì, con dieta e stile di vita</option>
+                <option value="entrambi">Sì, con entrambi</option>
+              </select><br /><br />
+
+              <label><strong>
+                75. Hai mai riscontrato valori elevati di glicemia a digiuno (superiori a 99 mg/dL) in esami recenti?</strong></label><br />
+              <label><input type="checkbox" name="glicemia" value="no" /> No, mai</label><br />
+              <label><input type="checkbox" name="glicemia" value="occasionalmente" /> Sì, occasionalmente (tra 100-125 mg/dL)</label><br />
+              <label><input type="checkbox" name="glicemia" value="diagnosi" /> Sì, valori costantemente superiori a 125 mg/dL (diabete diagnosticato)</label><br />
+              <label><input type="checkbox" name="glicemia" value="non_so" /> Non so / non ho mai fatto l’esame</label><br />
+              <label>Se sì, Attualmente stai seguendo uno dei seguenti approcci?</label><br />
+              <select name="approccio_glicemia">
+                <option value="">-- Seleziona --</option>
+                <option value="dieta">Dieta a basso contenuto di zuccheri</option>
+                <option value="esercizio">Esercizio fisico regolare</option>
+                <option value="farmaci">Farmaci ipoglicemizzanti orali</option>
+                <option value="insulina">Insulina</option>
+                <option value="nessuno">Nessuno</option>
+                <option value="accertamento">In fase di accertamento/diagnosi</option>
+              </select><br /><br />
             
-              <label>
-                <input type="checkbox" name="parenti_malattie_coronariche" value="più_familiari" />
-                Sì, in più di un familiare
-              </label><br />
+              <label for="peso">Peso (kg):</label>
+              <input type="number" id="peso" name="peso">
+              
+              <label for="altezza">Altezza (cm):</label>
+              <input type="number" id="altezza" name="altezza">
+              
+              <label for="bmi">BMI:</label>
+              <input type="text" id="bmi" name="bmi" readonly>
+            <p><em>Categorie:</em></p>
+            <ul style="margin-top:0;">
+              <li>Sottopeso (BMI &lt; 18.5)</li>
+              <li>Normopeso (BMI 18.5 – 24.9)</li>
+              <li>Sovrappeso (BMI 25 – 29.9)</li>
+              <li>Obesità (BMI ≥ 30)</li>
+            </ul>
+            <p id="risultatoBMI"></p><br />
+
             
-              <label>
-                <input type="checkbox" name="parenti_malattie_coronariche" value="non_lo_so" />
-                Non lo so
-              </label><br />
+
+            <label><strong>76. Hai mai avuto alterazioni nei livelli di colesterolo, LDL ("colesterolo cattivo") o HDL ("colesterolo buono") nelle analisi del sangue?</strong></label><br />
+            <label><input type="checkbox" name="q81" value="mai"> No, sempre risultati normali</label><br>
+            <label><input type="checkbox" name="q81" value="passato_controllo"> Sì, alterati in passato ma ora rientrati nella norma</label><br>
+            <label><input type="checkbox" name="q81" value="attuali"> Sì, attualmente ho livelli alterati</label><br>
+            <label><input type="checkbox" name="q81" value="in_trattamento"> Sì, sono in trattamento farmacologico o dietetico</label><br>
+            <label><input type="checkbox" name="q81" value="non_so"> Non so / Non ho mai eseguito esami specifici</label><br><br>
+
+            <label>Se vuoi, specifica il valore più recente di colesterolo totale, LDL o HDL:</label><br>
+            <input type="text" name="valori_colesterolo" placeholder="Es. Colesterolo totale: 220 mg/dL, LDL: 140 mg/dL, HDL: 45 mg/dL"><br><br>
+
+            <!-- Domanda 81.1 -->
+            <label><strong>
+              77. Ricordi il valore del tuo BAP test?</strong></label><br />
+            <input type="text" name="valore_bap_test" placeholder="Inserisci valore" /><br /><br />
+
+            <!-- Domanda 81.2 -->
+            <label><strong>
+              78. Ricordi il valore del tuo d-ROMs test?</strong></label><br />
+            <input type="text" name="valore_droms_test" placeholder="Inserisci valore" /><br /><br />
+                </div>
+            <hr>
+            <div class="step" id="step4">
+              <h2>STILE DI VITA, ATTIVITà FISICA E FATTORI AMBIENTALI</h2>
+              <h5>Se disponi di un test o di un’analisi recente relativa a {STILE DI VITA, ATTIVITà FISICA E FATTORI AMBIENTALI}, puoi inviarla: ci aiuterà a elaborare un report ancora più preciso e personalizzato.</h5>
+    
+            <!-- Domanda 23.1 -->
+            <label><strong>
+              79. Nella vita di tutti i giorni, come ti sposti prevalentemente?</strong></label><br />
+            <label><input type="checkbox" name="mezzo_spostamento" value="a_piedi" /> A piedi</label><br />
+            <label><input type="checkbox" name="mezzo_spostamento" value="bicicletta" /> In bicicletta</label><br />
+            <label><input type="checkbox" name="mezzo_spostamento" value="macchina_moto" /> In macchina o moto</label><br />
+            <label><input type="checkbox" name="mezzo_spostamento" value="mezzi_pubblici" /> Mezzi pubblici</label><br />
+            <label><input type="checkbox" name="mezzo_spostamento" value="alterno_mezzi" /> Alterno diversi mezzi</label><br /><br />
+
+            <!-- Domanda 23.2 -->
+            <label><strong>
+              80. Quante rampe di scale percorri mediamente ogni giorno?</strong></label><br />
+            <label><input type="checkbox" name="rampe_scale" value="nessuna" /> Nessuna</label><br />
+            <label><input type="checkbox" name="rampe_scale" value="1_2" /> 1–2 rampe</label><br />
+            <label><input type="checkbox" name="rampe_scale" value="3_5" /> 3–5 rampe</label><br />
+            <label><input type="checkbox" name="rampe_scale" value="piu_5" /> Più di 5 rampe</label><br /><br />
+
+            <!-- Domanda 23.3 -->
+            <label><strong>
+              81. Quanto frequentemente svolgi lavori domestici?</strong></label><br />
+            <label><input type="checkbox" name="lavori_domestici" value="quasi_ogni_giorno" /> Quasi ogni giorno</label><br />
+            <label><input type="checkbox" name="lavori_domestici" value="2_3_settimana" /> 2–3 volte a settimana</label><br />
+            <label><input type="checkbox" name="lavori_domestici" value="1_settimana" /> 1 volta a settimana</label><br />
+            <label><input type="checkbox" name="lavori_domestici" value="raramente_mai" /> Raramente o mai</label><br /><br />
+
+            <!-- Domanda 23.4 -->
+            <label><strong>
+              82. Svolgi regolarmente attività all’aperto come giardinaggio, orticoltura o simili?</strong></label><br />
+            <label><input type="checkbox" name="attivita_aperto" value="settimanale" /> Sì, almeno 1 volta a settimana</label><br />
+            <label><input type="checkbox" name="attivita_aperto" value="occasionale" /> Sì, ma solo occasionalmente</label><br />
+            <label><input type="checkbox" name="attivita_aperto" value="mai" /> No, mai</label><br /><br />
+
+            <!-- Domanda 23.5 -->
+            <label><strong>
+              83. Quante ore alla settimana dedichi ad attività fisiche spontanee?</strong></label><br />
+            <label><input type="checkbox" name="attivita_spontanea" value="meno_1" /> Meno di 1 ora</label><br />
+            <label><input type="checkbox" name="attivita_spontanea" value="1_3" /> 1–3 ore</label><br />
+            <label><input type="checkbox" name="attivita_spontanea" value="4_6" /> 4–6 ore</label><br />
+            <label><input type="checkbox" name="attivita_spontanea" value="piu_6" /> Più di 6 ore</label><br /><br />
+
+            <!-- Domanda 23.6 -->
+            <label><strong>
+              84. Quando possibile, preferisci:</strong></label><br />
+            <label><input type="checkbox" name="ascensore_scale" value="ascensore" /> Prendere l’ascensore</label><br />
+            <label><input type="checkbox" name="ascensore_scale" value="scale" /> Usare le scale</label><br />
+            <label><input type="checkbox" name="ascensore_scale" value="dipende" /> Dipende dalla situazione</label><br /><br />
+
+            <!-- Domanda 23.7 -->
+            <label><strong>
+              85. Durante il tempo libero, preferisci attività:</strong></label><br />
+            <label><input type="checkbox" name="attivita_tempo_libero" value="sedentarie" /> Sedentarie (TV, computer, lettura)</label><br />
+            <label><input type="checkbox" name="attivita_tempo_libero" value="moderatamente_attive" /> Moderatamente attive (passeggiate, shopping)</label><br />
+            <label><input type="checkbox" name="attivita_tempo_libero" value="attive" /> Attive (escursioni, giardinaggio, sport)</label><br /><br />
+
+            <label><strong>
+              86. Il tuo attuale lavoro comporta rischi significativi per la salute?</strong></label><br />
+            <label><input type="checkbox" name="rischi_lavorativi" value="basso_rischio" /> No, svolgo un’attività lavorativa a basso rischio</label><br />
+            <label><input type="checkbox" name="rischi_lavorativi" value="rischi_sotto_controllo" /> Sì, ma i rischi sono sotto controllo con misure di sicurezza adeguate</label><br />
+            <label><input type="checkbox" name="rischi_lavorativi" value="rischi_regolari" /> Sì, sono esposto/a regolarmente a rischi lavorativi</label><br />
+            <label><input type="checkbox" name="rischi_lavorativi" value="non_lavoro" /> Non lavoro al momento</label><br /><br />
+
+            <label><strong>
+              87. Ritieni che l’ambiente in cui vivi sia salubre e privo di fattori potenzialmente nocivi per la salute?</strong></label><br />
+            <label><input type="checkbox" name="ambiente_salubre" value="ambiente_salubre" /> Sì, vivo in un ambiente salubre e ben mantenuto</label><br />
+            <label><input type="checkbox" name="ambiente_salubre" value="alcuni_fattori" /> In parte: ci sono alcuni fattori da migliorare (es. umidità, traffico, scarsa ventilazione)</label><br />
+            <label><input type="checkbox" name="ambiente_salubre" value="ambiente_nocivo" /> No, vivo in un ambiente che può influire negativamente sulla salute</label><br />
+            <label><input type="checkbox" name="ambiente_salubre" value="non_so" /> Non so</label><br /><br />
+
+            <label><strong>
+              88. Quanto spesso svolgi attività fisica moderata o intensa durante la settimana?</strong></label><br />
+              <p><em>(Moderata = camminata veloce, bicicletta tranquilla. Intensa = corsa, HIIT, sport agonistico)</em></p>
+              <label><input type="checkbox" name="q84" value="mai"> Mai o quasi mai</label><br>
+              <label><input type="checkbox" name="q84" value="1_volta"> 1 volta a settimana</label><br>
+              <label><input type="checkbox" name="q84" value="2_3_volte"> 2-3 volte a settimana</label><br>
+              <label><input type="checkbox" name="q84" value="4_plus"> 4 o più volte a settimana</label>
             
-              <label for="parenti_malattie_coronariche_note"><br />
-                Specificare se possibile tipo di malattia e età di insorgenza:
+            <label><strong>
+              89. Quanta attività fisica svolgi mediamente ogni settimana?</strong></label><br />
+              <label><input type="checkbox" name="attività_fisica_settimanale" value="nessuna" /> Nessuna o quasi nessuna (meno di 1 volta a settimana)</label><br />
+              <label><input type="checkbox" name="attività_fisica_settimanale" value="meno_di_2" /> Meno di 2 volte a settimana di attività moderata o 1 volta a settimana di attività intensa</label><br />
+              <label><input type="checkbox" name="attività_fisica_settimanale" value="meno_di_3" /> Meno di 3 volte a settimana di attività moderata o 2 volte a settimana di attività intensa</label><br />
+              <label><input type="checkbox" name="attività_fisica_settimanale" value="più_di_3" /> Più di 3 volte a settimana di attività moderata o più di 2 volte a settimana di attività intensa</label><br />
+              <label><input type="checkbox" name="attività_fisica_settimanale" value="non_so" /> Non so / Non monitoro il mio livello di attività</label><br /><br />
+  
+              <label><strong>
+                90. Hai mai fumato sigarette o usato prodotti contenenti nicotina?</strong></label><br />
+                
+                <label><input type="checkbox" name="fumo_nicotina" value="mai_fumato" /> No, non ho mai fumato né usato prodotti a base di nicotina</label><br />
+                
+                <label><input type="checkbox" name="fumo_nicotina" value="ex_fumatore_oltre_12_mesi" /> Sì, ma ho smesso da più di 12 mesi</label><br />
+                
+                <label><input type="checkbox" name="fumo_nicotina" value="ex_fumatore_meno_12_mesi" /> Sì, ma ho smesso da meno di 12 mesi</label><br />
+                
+                <label><input type="checkbox" name="fumo_nicotina" value="fumatore_occasionale" /> Sì, fumo occasionalmente (meno di 5 sigarette al giorno in media)</label><br />
+                
+                <label><input type="checkbox" name="fumo_nicotina" value="fumatore_regolare" /> Sì, fumo regolarmente (5 o più sigarette al giorno)</label><br />
+                
+                <label><input type="checkbox" name="fumo_nicotina" value="dispositivi_alternativi" /> Uso dispositivi alternativi (es. sigarette elettroniche, tabacco riscaldato, snus)</label><br /><br>
+                
+                <label>Se vuoi, specifica da quanto tempo fumi o hai smesso, e che tipo di prodotti usi/usavi:</label><br>
+                <input type="text" name="dettagli_fumo" placeholder="Es. Smetto da 2 anni, usavo 10 sigarette al giorno, ora solo e-cigarette">
+  
+                <label><strong>
+                  91. Consumi bevande alcoliche?</strong></label><br />
+                  
+                  <label><input type="checkbox" name="consumo_alcol" value="no" /> No, non consumo alcolici</label><br />
+                  
+                  <label><input type="checkbox" name="consumo_alcol" value="meno_1_drink_settimana" /> Sì, 1 bicchiere a settimana</label><br />
+                  
+                  <label><input type="checkbox" name="consumo_alcol" value="1_7_drink_settimana" /> Sì, da 1 a 7 bicchieri a settimana</label><br />
+                  
+                  <label><input type="checkbox" name="consumo_alcol" value="8_14_drink_settimana" /> Sì, da 8 a 14 bicchieri a settimana</label><br />
+                  
+                  <label><input type="checkbox" name="consumo_alcol" value="oltre_14_drink_settimana" /> Sì, più di 14 bicchiere a settimana</label><br />
+                  
+                  <label><input type="checkbox" name="consumo_alcol" value="smetto" /> Ho smesso di consumare alcol</label><br /><br />
+                  
+                  <label>Se vuoi, specifica che tipo di bevande consumi più frequentemente (vino, birra, superalcolici, altro):</label><br>
+                  <input type="text" name="tipo_alcolici" placeholder="Es. Vino rosso 2 bicchieri a settimana">
+            
+            <label><strong>
+              92. Hai una minzione regolare e senza difficoltà?</strong></label><br />
+            <label><input type="checkbox" name="minzione" value="regolare" /> Sì, urino regolarmente (4–7 volte al giorno), senza dolore o difficoltà</label><br />
+            <label><input type="checkbox" name="minzione" value="pollachiuria" /> Ho urgenza frequente o bisogno di urinare spesso (pollachiuria)</label><br />
+            <label><input type="checkbox" name="minzione" value="difficoltà_urinare" /> Ho difficoltà a urinare o sensazione di svuotamento incompleto</label><br />
+            <label><input type="checkbox" name="minzione" value="disuria" /> Ho bruciore o dolore durante la minzione (disuria)</label><br />
+            <label><input type="checkbox" name="minzione" value="variazioni_urine" /> Ho notato variazioni nel colore, nell’odore o nella quantità delle urine</label><br />
+            <label><input type="checkbox" name="minzione" value="incontinenza" /> Ho episodi di incontinenza o perdite involontarie</label><br /><br />
+
+            <label><strong>
+              93. Hai mai avuto reazioni allergiche o sei allergico a qualcosa?</strong></label><br />
+            <label><input type="checkbox" name="allergie" value="no" /> No, non ho mai avuto reazioni allergiche</label><br />
+            <label><input type="checkbox" name="allergie" value="farmaci" /> Sì, a farmaci (es. antibiotici, antinfiammatori, ecc.)</label><br />
+            <label><input type="checkbox" name="allergie" value="alimenti" /> Sì, ad alimenti (es. latte, frutta secca, crostacei…)</label><br />
+            <label><input type="checkbox" name="allergie" value="ambientali" /> Sì, ad allergeni ambientali (pollini, acari, polvere, peli di animali)</label><br />
+            <label><input type="checkbox" name="allergie" value="insetti" /> Sì, a punture di insetti (api, vespe…)</label><br />
+            <label><input type="checkbox" name="allergie" value="altre" /> Sì, altre (specificare):</label><br />
+            <textarea name="allergie_altre" rows="2" placeholder="Specifica qui..."></textarea><br />
+            <label><input type="checkbox" name="allergie" value="non_sicuro" /> Non sono sicuro / Non ho mai fatto test allergologici</label><br /><br />
+
+            <label><strong>
+              94. Assumi attualmente farmaci su base regolare o continuativa?</strong></label><br />
+            <label><input type="checkbox" name="farmaci_regolari" value="no" /> No, non assumo farmaci regolarmente</label><br />
+            <label><input type="checkbox" name="farmaci_regolari" value="patologia_cronica" /> Sì, per una patologia cronica diagnosticata (es. diabete, ipertensione…)</label><br />
+            <label><input type="checkbox" name="farmaci_regolari" value="terapia_ormonale" /> Sì, come terapia ormonale o contraccettiva</label><br />
+            <label><input type="checkbox" name="farmaci_regolari" value="integratori" /> Sì, integratori o prodotti da banco prescritti regolarmente</label><br />
+            <label>Se sì, specifica il nome del farmaco, la posologia e il motivo dell’assunzione:</label><br />
+            <textarea name="farmaci_specifica" rows="3" placeholder="Es: Metformina 500 mg, 2 volte al giorno, diabete tipo 2"></textarea><br /><br />
+
+            <label><strong>
+              95. Ti capita spesso che un’infiammazione o un’infezione locale sembri influire sul tuo stato generale?</strong></label><br />
+              <label><input type="checkbox" name="domanda100" value="frequentemente"> Sì, frequentemente</label><br>
+              <label><input type="checkbox" name="domanda100" value="qualche_volta"> Qualche volta</label><br>
+              <label><input type="checkbox" name="domanda100" value="raramente"> Raramente</label><br>
+              <label><input type="checkbox" name="domanda100" value="mai"> Mai</label>
+
+              <label><strong>
+                96. Hai orari regolari per il sonno e i pasti durante la settimana?</strong></label><br />
+              <label><input type="checkbox" name="domanda103" value="orari_regolari"> Sì, vado a dormire e mangio quasi sempre agli stessi orari</label><br>
+              <label><input type="checkbox" name="domanda103" value="cerco_routine"> Cerco di mantenere una routine, ma con qualche variazione</label><br>
+              <label><input type="checkbox" name="domanda103" value="orari_variano"> I miei orari cambiano spesso in base agli impegni</label><br>
+              <label><input type="checkbox" name="domanda103" value="ritmo_irregolare"> No, ho un ritmo irregolare sia nel sonno che nell’alimentazione</label>
+
+            <label><strong>
+              97. Quanto rapidamente ti senti di recuperare dopo uno sforzo o stress?</strong></label><br />
+              <label><input type="checkbox" name="domanda104" value="molto_rapidamente"> Molto rapidamente, torno alla normalità in poche ore</label><br>
+              <label><input type="checkbox" name="domanda104" value="abbastanza_rapidamente"> Abbastanza rapidamente, ma ho bisogno di almeno un giorno</label><br>
+              <label><input type="checkbox" name="domanda104" value="lentamente"> Lentamente, impiego 2-3 giorni per tornare in forma</label><br>
+              <label><input type="checkbox" name="domanda104" value="faccio_fatica"> Faccio fatica a recuperare, mi sento spesso stanco o fuori equilibrio</label>
+
+
+              <label><strong>
+                98. Esponi volontariamente il tuo corpo a stress controllati (es. freddo, digiuno, sforzi fisici intensi) per migliorare la tua salute e resilienza?</strong></label><br />
+                <label><input type="checkbox" name="domanda105" value="regolarmente"> Sì, regolarmente (es. docce fredde, sauna, digiuno intermittente, HIIT)</label><br>
+                <label><input type="checkbox" name="domanda105" value="ogni_tanto"> Ogni tanto, ma senza una routine precisa</label><br>
+                <label><input type="checkbox" name="domanda105" value="raramente"> Raramente, ma ne ho sentito parlare</label><br>
+                <label><input type="checkbox" name="domanda105" value="no"> No, non pratico nessuna forma di stress controllato</label>
+              <br>
+
+              <label><strong>
+                99. Hai mai adottato pratiche che favoriscono la rigenerazione dei tessuti corporei?</strong></label><br />
+                <label><input type="checkbox" name="rigenerazione_tessuti" value="attività_fisica_moderata"> Attività fisica regolare e moderata</label><br>
+                <label><input type="checkbox" name="rigenerazione_tessuti" value="sonno_ottimizzato"> Miglioramento della qualità del sonno</label><br>
+                <label><input type="checkbox" name="rigenerazione_tessuti" value="nutrizione_ricca_antiossidanti"> Dieta ricca di antiossidanti e nutrienti rigenerativi (es. vitamina C, omega-3)</label><br>
+                <label><input type="checkbox" name="rigenerazione_tessuti" value="gestione_stress"> Tecniche di gestione dello stress (es. meditazione, mindfulness)</label><br>
+                <label><input type="checkbox" name="rigenerazione_tessuti" value="terapie_rigenerative"> Terapie specifiche (es. PRP, ozonoterapia, integratori mirati)</label><br>
+                <label><input type="checkbox" name="rigenerazione_tessuti" value="no"> Non ho mai adottato pratiche specifiche</label><br><br>
+                
+                <label>Se sì, da quanto tempo o con quale frequenza? 
+                <input type="text" name="durata_rigenerazione" placeholder="Es: pratico yoga da 2 anni, sonno migliorato 6 mesi fa"></label>
+                <br><br>
+                
+                <label><strong>
+                100. Adotti misure per proteggere l'integrità del tuo DNA?</strong></label><br />
+                <label><input type="checkbox" name="protezione_dna" value="uso_antiossidanti"> Uso di integratori antiossidanti (es. vitamina C, vitamina E, glutatione)</label><br>
+                <label><input type="checkbox" name="protezione_dna" value="protezione_solari"> Protezione solare costante (non solo d'estate) per evitare danni da raggi UV</label><br>
+                <label><input type="checkbox" name="protezione_dna" value="dieta_antinfiammazione"> Dieta anti-infiammatoria (es. consumo ridotto di zuccheri e alimenti processati)</label><br>
+                <label><input type="checkbox" name="protezione_dna" value="evitare_fumo_alcol"> Evitare esposizione a fumo di sigaretta, alcol e sostanze tossiche</label><br>
+                <label><input type="checkbox" name="protezione_dna" value="nessuna_misura"> No, non adotto misure specifiche</label><br><br>
+
+                <label><strong>
+                  101. Adotti abitudini che supportano la salute delle proteine nel tuo organismo (prevenendo danni e accumulo di proteine malfunzionanti)?</strong></label><br />
+                  <p style="font-size: 0.9em; color: gray;">
+                  Esempi: attività fisica regolare, alimentazione ricca di antiossidanti e proteine di alta qualità, sonno adeguato, controllo dello stress, riduzione dell'esposizione a tossine ambientali.
+                  </p>
+                  <label><input type="checkbox" name="domanda108" value="completo"> Sì, seguo regolarmente più di una di queste strategie</label><br>                  
+                  <label><input type="checkbox" name="domanda108" value="parziale"> Sì, ma solo alcune strategie o in modo saltuario</label><br>
+                  <label><input type="checkbox" name="domanda108" value="no_ma_interessato"> No, ma vorrei sapere come migliorare questo aspetto</label><br>
+                  <label><input type="checkbox" name="domanda108" value="no"> No, non sono a conoscenza di queste pratiche</label><br><br>
+
+              <label><strong>
+                102. Hai mai adottato strategie per migliorare la funzionalità mitocondriale?</strong></label><br />
+                <label><input type="checkbox" name="domanda109" value="si_regolare"> Sì, pratico attività aerobica regolare e assumo integratori...</label><br>
+                <label><input type="checkbox" name="domanda109" value="si_saltuario"> Sì, ma in modo saltuario e senza un piano preciso</label><br>
+                <label><input type="checkbox" name="domanda109" value="no_ma_interessato"> No, ma mi interessa saperne di più</label><br>
+                <label><input type="checkbox" name="domanda109" value="no"> No, non ho mai affrontato questo aspetto</label><br><br>
+                <label>Quanto tempo fa e per quanto tempo? <input type="text" name="domanda109_durata" placeholder="Es. 1 anno fa per 3 mesi"></label>
+
+
+                <label><strong>
+                  103. Negli ultimi anni, hai adottato strategie specifiche per ridurre l'infiammazione cronica sistemica e supportare un invecchiamento sano?</strong></label><br />
+                  
+                  <p style="font-size: 0.9em; color: gray;">
+                  Esempi: dieta antinfiammatoria (ricca di omega-3, fibre, polifenoli), attività fisica regolare, riduzione del consumo di zuccheri/alcool, gestione attiva dello stress, integrazione mirata (es. curcumina, omega-3).
+                  </p>
+                  
+                  <label><input type="checkbox" name="domanda110" value="stile_vita_completo"> Sì, seguo un approccio completo (alimentazione, esercizio fisico e gestione dello stress)</label><br>
+                  <label><input type="checkbox" name="domanda110" value="stile_vita_parziale"> Sì, curo solo alcuni aspetti (es. solo dieta o solo esercizio)</label><br>
+                  <label><input type="checkbox" name="domanda110" value="interessato"> No, ma mi piacerebbe sapere come migliorare</label><br>
+                  <label><input type="checkbox" name="domanda110" value="no"> No, non seguo strategie specifiche</label><br><br>
+
+              <label><strong>
+                104. Adotti abitudini utili a ridurre l'infiammazione cronica di basso grado?</strong><br />
+                <small>(es. dieta equilibrata, attività fisica, buon sonno, poco stress, niente fumo, pochi zuccheri)</small></label><br />
+                <label><input type="checkbox" name="infiammazione_bassa" value="completo"> Sì, seguo uno stile di vita anti-infiammatorio su più aspetti (alimentazione, sonno, movimento, stress)</label><br>
+                <label><input type="checkbox" name="infiammazione_bassa" value="parziale"> In parte: curo solo alcuni aspetti (es. dieta ma non movimento o sonno)</label><br>
+                <label><input type="checkbox" name="infiammazione_bassa" value="interessato"> No, ma mi piacerebbe sapere come fare</label><br>
+                <label><input type="checkbox" name="infiammazione_bassa" value="no"> No, non mi occupo di questo aspetto o non lo conosco</label><br><br>
+
+                <label><strong>
+                  105. Adotti strategie per ridurre l'infiammazione cronica legata all’invecchiamento?</strong><br />
+                  <small>(es. alimentazione sana, attività fisica, sonno regolare, integratori antiossidanti, riduzione dello stress)</small></label><br />
+                  
+                  <label><input type="checkbox" name="infiammazione_età" value="completo" />
+                  Sì: seguo uno stile di vita completo (dieta anti-infiammatoria, esercizio fisico regolare, integratori, sonno e gestione dello stress)</label><br>
+                  
+                  <label><input type="checkbox" name="infiammazione_età" value="parziale" />
+                  In parte: curo solo alcuni aspetti (es. alimentazione o attività fisica, ma non tutti)</label><br>
+                  
+                  <label><input type="checkbox" name="infiammazione_età" value="interessato" />
+                  No, ma mi interessa iniziare ad adottare queste strategie</label><br>
+                  
+                  <label><input type="checkbox" name="infiammazione_età" value="no" />
+                  No, non conosco queste strategie o non le ho mai considerate</label><br><br>
+                  <label>Quanto tempo fa e per quanto tempo?<br>
+                    <textarea name="domanda114_tempo" rows="3" cols="50"></textarea>
+                  </label>
+            
+            
+            <!-- Domanda 114 -->
+            <label><strong>
+              106. Hai mai notato uno o più dei seguenti sintomi in modo frequente (almeno 1-2 volte a settimana)?</strong></label><br />
+              <label><input type="checkbox" name="domanda114[]" value="gonfiore"> Gonfiore o tensione addominale</label><br>
+              <label><input type="checkbox" name="domanda114[]" value="feci_irregolari"> Feci irregolari</label><br>
+              <label><input type="checkbox" name="domanda114[]" value="pancia_pesante"> Sensazione di “pancia pesante” dopo i pasti</label><br>
+              <label><input type="checkbox" name="domanda114[]" value="infezioni"> Infezioni ricorrenti</label><br>
+              <label><input type="checkbox" name="domanda114[]" value="sensibilita"> Sensibilità a cibi fermentati o zuccheri</label><br>
+              <label><input type="checkbox" name="domanda114[]" value="umore"> Sbalzi d’umore, ansia o calo della concentrazione</label><br>
+              <label><input type="checkbox" name="domanda114[]" value="nessuno"> Nessuno di questi</label><br>
+              <label>Quanto tempo fa e per quanto tempo?<br>
+                <textarea name="domanda114_tempo" rows="3" cols="50"></textarea>
               </label>
-              <textarea name="parenti_malattie_coronariche_note" rows="3"></textarea>
-            </div>     
 
-        <label>2. Ci sono casi di diabete nella tua famiglia?</label>
-        <select name="fam_diabete">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <input type="text" name="fam_diabete_note" />
-
-        <label>3. Hai familiarità per malattie oncologiche?</label>
-        <select name="fam_cancro">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica tipo di tumore:</label>
-        <input type="text" name="fam_cancro_note" />
-
-        <label>4. Ci sono casi di malattie neurodegenerative in famiglia?</label>
-        <select name="fam_neurodegenerative">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <input type="text" name="fam_neurodegenerative_note" />
-
-        <label>5. Hai familiarità per malattie autoimmuni?</label>
-        <select name="fam_autoimmune">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica quali:</label>
-        <input type="text" name="fam_autoimmune_note" />
-
-        <label>6. Hai parenti con allergie o asma?</label>
-        <select name="fam_allergie">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <input type="text" name="fam_allergie_note" />
-
-        <label>7. Ci sono casi di ipertensione arteriosa in famiglia?</label>
-        <select name="fam_ipertensione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>8. Hai familiarità per malattie renali?</label>
-        <select name="fam_renali">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <input type="text" name="fam_renali_note" />
-
-        <label>9. Ci sono casi di malattie epatiche in famiglia?</label>
-        <select name="fam_epatiche">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>10. Hai parenti con problemi tiroidei?</label>
-        <select name="fam_tiroide">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>11. Ci sono casi di malattie psichiatriche in famiglia?</label>
-        <select name="fam_psichiatriche">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <input type="text" name="fam_psichiatriche_note" />
-
-        <label>12. Hai familiarità per malattie respiratorie croniche?</label>
-        <select name="fam_respiratorie">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>13. Ci sono casi di osteoporosi in famiglia?</label>
-        <select name="fam_osteoporosi">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>14. Hai parenti con malattie gastrointestinali croniche?</label>
-        <select name="fam_gastrointestinali">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>15. Ci sono casi di malattie ematologiche in famiglia?</label>
-        <select name="fam_ematologiche">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>16. Hai altre malattie ereditarie nella famiglia di cui vuoi parlare?</label>
-        <textarea name="fam_altre" rows="3"></textarea>
-      </div>
-
-      <div class="step" id="step2">
-        <h2>Sviluppo e anamnesi personale (Domande 17–32)</h2>
-
-        <label>17. Sei nato a termine o pretermine?</label>
-        <select name="nascita_termine">
-          <option value="termine">A termine</option>
-          <option value="pretermine">Pretermine</option>
-        </select>
-
-        <label>18. Hai avuto complicazioni alla nascita?</label>
-        <select name="complicazioni_nascita">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <textarea name="complicazioni_nascita_note" rows="3"></textarea>
-
-        <label>19. Hai avuto problemi di crescita o sviluppo durante l'infanzia?</label>
-        <select name="problemi_crescita">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <textarea name="problemi_crescita_note" rows="3"></textarea>
-
-        <label>20. Hai avuto malattie importanti durante l'infanzia?</label>
-        <select name="malattie_infanzia">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica quali:</label>
-        <textarea name="malattie_infanzia_note" rows="3"></textarea>
-
-        <label>21. Hai mai avuto interventi chirurgici?</label>
-        <select name="interventi_chirurgici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica quali e quando:</label>
-        <textarea name="interventi_chirurgici_note" rows="3"></textarea>
-
-        <label>22. Hai allergie note?</label>
-        <select name="allergie_personali">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <textarea name="allergie_personali_note" rows="3"></textarea>
-
-        <label>23. Hai mai avuto malattie infettive importanti?</label>
-        <select name="malattie_infettive">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica quali:</label>
-        <textarea name="malattie_infettive_note" rows="3"></textarea>
-
-        <label>24. Hai mai avuto problemi cardiaci?</label>
-        <select name="problemi_cardiaci">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>25. Hai mai sofferto di ipertensione?</label>
-        <select name="ipertensione_personale">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>26. Hai mai avuto diabete?</label>
-        <select name="diabete_personale">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>27. Hai mai avuto problemi respiratori cronici?</label>
-        <select name="problemi_respiratori">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>28. Hai mai sofferto di disturbi neurologici?</label>
-        <select name="disturbi_neurologici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>29. Hai mai avuto disturbi psichiatrici?</label>
-        <select name="disturbi_psichiatrici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>30. Hai mai avuto patologie autoimmuni?</label>
-        <select name="autoimmuni_personali">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>31. Sei attualmente in terapia farmacologica?</label>
-        <select name="terapia_farmacologica">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica quali farmaci:</label>
-        <textarea name="terapia_farmacologica_note" rows="3"></textarea>
-
-        <label>32. Hai altre condizioni mediche personali di cui vuoi parlare?</label>
-        <textarea name="condizioni_personali_altre" rows="3"></textarea>
-      </div>
-
-      <div class="step" id="step3">
-        <h2>Fattori ambientali e stile di vita (Domande 33–45)</h2>
-
-        <label>33. Dove vivi principalmente?</label>
-        <select name="residenza">
-          <option value="urbana">Area urbana</option>
-          <option value="suburbana">Area suburbana</option>
-          <option value="rurale">Area rurale</option>
-        </select>
-
-        <label>34. Sei esposto a inquinamento atmosferico o sostanze tossiche?</label>
-        <select name="esposizione_inquinanti">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica quali:</label>
-        <textarea name="esposizione_inquinanti_note" rows="3"></textarea>
-
-        <label>35. Fumi?</label>
-        <select name="fumo">
-          <option value="no">No</option>
-          <option value="occasionale">Occasionale</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>36. Bevi alcolici?</label>
-        <select name="alcool">
-          <option value="no">No</option>
-          <option value="occasionale">Occasionale</option>
-          <option value="regolare">Regolare</option>
-        </select>
-
-        <label>37. Pratichi attività fisica?</label>
-        <select name="attivita_fisica">
-          <option value="no">No</option>
-          <option value="1-2">1-2 volte a settimana</option>
-          <option value="3+">3 o più volte a settimana</option>
-        </select>
-
-        <label>38. Quante ore dormi mediamente per notte?</label>
-        <input type="number" name="sonno_ore" min="0" max="12" />
-
-        <label>39. Come valuti il tuo livello di stress?</label>
-        <select name="stress">
-          <option value="basso">Basso</option>
-          <option value="moderato">Moderato</option>
-          <option value="alto">Alto</option>
-        </select>
-
-        <label>40. Sei esposto a rumori forti o ambienti rumorosi?</label>
-        <select name="esposizione_rumore">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>41. Usi dispositivi elettronici prima di dormire?</label>
-        <select name="uso_elettronici_sonno">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>42. Hai animali domestici?</label>
-        <select name="animali_domestici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>43. Sei esposto a fumo passivo?</label>
-        <select name="fumo_passivo">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>44. Usi prodotti chimici o detergenti aggressivi frequentemente?</label>
-        <select name="uso_prodotti_chimici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>45. Hai altre informazioni sul tuo ambiente o stile di vita da condividere?</label>
-        <textarea name="ambiente_altro" rows="3"></textarea>
-      </div>
-
-      <div class="step" id="step4">
-        <h2>Condizioni cliniche e malattie (Domande 46–80)</h2>
-
-        <label>46. Hai mai avuto malattie cardiovascolari?</label>
-        <select name="malattie_cardiovascolari">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>47. Hai mai avuto infarti o ischemie?</label>
-        <select name="infarti_ischemie">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>48. Hai mai avuto ipertensione arteriosa?</label>
-        <select name="ipertensione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>49. Hai mai sofferto di diabete mellito?</label>
-        <select name="diabete">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>50. Hai mai avuto problemi renali?</label>
-        <select name="problemi_renali">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>51. Hai mai sofferto di malattie epatiche?</label>
-        <select name="malattie_epatiche">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>52. Hai mai avuto disturbi gastrointestinali cronici?</label>
-        <select name="disturbi_gastrointestinali">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>53. Hai mai sofferto di malattie polmonari croniche?</label>
-        <select name="malattie_polmonari">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>54. Hai mai avuto disturbi neurologici?</label>
-        <select name="disturbi_neurologici_clinici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>55. Hai mai sofferto di malattie autoimmuni?</label>
-        <select name="malattie_autoimmuni">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>56. Hai mai avuto problemi dermatologici cronici?</label>
-        <select name="problemi_dermatologici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>57. Hai mai sofferto di disturbi psichiatrici diagnosticati?</label>
-        <select name="disturbi_psichiatrici_clinici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>58. Hai mai avuto tumori?</label>
-        <select name="tumori">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica tipo e anno di diagnosi:</label>
-        <textarea name="tumori_note" rows="3"></textarea>
-
-        <label>59. Hai mai avuto problemi di vista o udito?</label>
-        <select name="problemi_vista_udito">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>60. Hai mai sofferto di problemi muscoloscheletrici?</label>
-        <select name="problemi_muscoloscheletrici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>61. Hai mai avuto problemi di coagulazione o emorragie?</label>
-        <select name="problemi_coagulazione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>62. Hai mai sofferto di problemi endocrini?</label>
-        <select name="problemi_endocrini">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>63. Hai mai avuto infezioni croniche?</label>
-        <select name="infezioni_croniche">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>64. Hai mai avuto problemi di fertilità?</label>
-        <select name="problemi_fertilita">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>65. Hai mai sofferto di disturbi del sonno diagnosticati?</label>
-        <select name="disturbi_sonno_clinici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>66. Sei stato ricoverato negli ultimi 5 anni?</label>
-        <select name="ricoveri_ultimi_5_anni">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica motivo e durata:</label>
-        <textarea name="ricoveri_note" rows="3"></textarea>
-
-        <label>67. Hai mai subito traumi importanti?</label>
-        <select name="traumi_importanti">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <textarea name="traumi_note" rows="3"></textarea>
-
-        <label>68. Hai mai avuto problemi dentali o gengivali?</label>
-        <select name="problemi_dentali">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>69. Hai mai sofferto di problemi gastrointestinali acuti?</label>
-        <select name="problemi_gastrointestinali_acuti">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>70. Hai mai avuto problemi di circolazione periferica?</label>
-        <select name="problemi_circolazione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>71. Hai mai sofferto di allergie o intolleranze alimentari?</label>
-        <select name="allergie_intolleranze_alimentari">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>72. Hai mai avuto problemi di peso o disturbi alimentari?</label>
-        <select name="problemi_peso_disturbi_alimentari">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>73. Hai mai sofferto di problemi immunitari?</label>
-        <select name="problemi_immunitari">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>74. Hai mai avuto problemi di equilibrio o vertigini?</label>
-        <select name="problemi_equilibrio">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>75. Hai mai sofferto di problemi di memoria o concentrazione?</label>
-        <select name="problemi_memoria_concentrazione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>76. Hai mai avuto problemi di vista o udito?</label>
-        <select name="problemi_vista_udito_clinici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>77. Hai mai sofferto di disturbi gastrointestinali funzionali?</label>
-        <select name="disturbi_gastrointestinali_funzionali">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>78. Hai mai avuto problemi di salute mentale?</label>
-        <select name="problemi_salute_mentale">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>79. Hai mai avuto problemi di dipendenze (alcool, droghe, farmaci)?</label>
-        <select name="problemi_dipendenze">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>80. Hai altre condizioni cliniche o malattie di cui vuoi parlare?</label>
-        <textarea name="condizioni_cliniche_altre" rows="3"></textarea>
-      </div>
-
-      <div class="step" id="step5">
-        <h2>Benessere psicofisico, stress, sonno (Domande 81–94)</h2>
-
-        <label>81. Come valuti il tuo stato di benessere generale?</label>
-        <select name="benessere_generale">
-          <option value="ottimo">Ottimo</option>
-          <option value="buono">Buono</option>
-          <option value="discreto">Discreto</option>
-          <option value="scarso">Scarso</option>
-        </select>
-
-        <label>82. Hai difficoltà a gestire lo stress quotidiano?</label>
-        <select name="gestione_stress">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>83. Hai mai avuto episodi di ansia o depressione?</label>
-        <select name="ansia_depressione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>84. Quante ore dormi mediamente per notte?</label>
-        <input type="number" name="ore_sonno" min="0" max="12" />
-
-        <label>85. Hai difficoltà ad addormentarti?</label>
-        <select name="difficolta_addormentarsi">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>86. Ti svegli frequentemente durante la notte?</label>
-        <select name="risvegli_notturni">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>87. Ti senti riposato al risveglio?</label>
-        <select name="riposo_al_risveglio">
-          <option value="sempre">Sempre</option>
-          <option value="spesso">Spesso</option>
-          <option value="raramente">Raramente</option>
-          <option value="mai">Mai</option>
-        </select>
-
-        <label>88. Hai mai usato farmaci per favorire il sonno?</label>
-        <select name="farmaci_sonno">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>89. Pratichi tecniche di rilassamento o meditazione?</label>
-        <select name="tecniche_rilassamento">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>90. Hai mai sofferto di affaticamento cronico?</label>
-        <select name="affaticamento_cronico">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>91. Hai difficoltà a mantenere la concentrazione?</label>
-        <select name="difficolta_concentrazione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>92. Ti senti spesso irritabile o nervoso?</label>
-        <select name="irritabilita">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>93. Hai altre osservazioni sul tuo benessere psicofisico?</label>
-        <textarea name="benessere_psicofisico_altro" rows="3"></textarea>
-
-        <label>94. Hai suggerimenti o commenti sul tuo stato di stress o sonno?</label>
-        <textarea name="stress_sonno_commenti" rows="3"></textarea>
-      </div>
-
-      <div class="step" id="step6">
-        <h2>Nutrizione, microbiota, infiammazione, rigenerazione (Domande 95–115)</h2>
-
-        <label>95. Quante porzioni di frutta mangi al giorno?</label>
-        <input type="number" name="porzioni_frutta" min="0" max="10" />
-
-        <label>96. Quante porzioni di verdura mangi al giorno?</label>
-        <input type="number" name="porzioni_verdura" min="0" max="10" />
-
-        <label>97. Consumi regolarmente alimenti fermentati (es. yogurt, kefir)?</label>
-        <select name="alimenti_fermentati">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>98. Bevi acqua regolarmente durante la giornata?</label>
-        <select name="acqua">
-          <option value="si">Sì</option>
-          <option value="no">No</option>
-        </select>
-
-        <label>99. Consumi frequentemente cibi processati o fast food?</label>
-        <select name="cibi_processati">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>100. Hai intolleranze o allergie alimentari?</label>
-        <select name="intolleranze_allergie_alimentari">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <textarea name="intolleranze_allergie_note" rows="3"></textarea>
-
-        <label>101. Consumi integratori alimentari o probiotici?</label>
-        <select name="integratori_probiotici">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica quali:</label>
-        <textarea name="integratori_probiotici_note" rows="3"></textarea>
-
-        <label>102. Hai problemi digestivi ricorrenti (gonfiore, diarrea, stitichezza)?</label>
-        <select name="problemi_digestivi">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>103. Segui una dieta particolare (vegetariana, vegana, senza glutine)?</label>
-        <select name="dieta_particolare">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica:</label>
-        <textarea name="dieta_particolare_note" rows="3"></textarea>
-
-        <label>104. Consumi abitualmente cibi ricchi di zuccheri?</label>
-        <select name="consumo_zuccheri">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>105. Consumi abitualmente cibi ricchi di grassi saturi?</label>
-        <select name="consumo_grassi_saturi">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>106. Consumi abitualmente cibi ricchi di fibre?</label>
-        <select name="consumo_fibre">
-          <option value="si">Sì</option>
-          <option value="no">No</option>
-        </select>
-
-        <label>107. Hai mai avuto infiammazioni croniche?</label>
-        <select name="infiammazioni_croniche">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>108. Hai mai avuto problemi di cicatrizzazione o rigenerazione tissutale?</label>
-        <select name="problemi_cicatrizzazione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>109. Pratichi attività fisica per favorire la rigenerazione?</label>
-        <select name="attivita_rigenerazione">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>110. Hai mai fatto esami del microbiota intestinale?</label>
-        <select name="esami_microbiota">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-        <label>Se sì, specifica risultati o osservazioni:</label>
-        <textarea name="esami_microbiota_note" rows="3"></textarea>
-
-        <label>111. Usi prodotti naturali o fitoterapici per il benessere intestinale?</label>
-        <select name="prodotti_naturali_intestino">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>112. Hai mai avuto problemi di gonfiore addominale?</label>
-        <select name="gonfiore_addominale">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>113. Hai mai avuto problemi di stipsi o diarrea ricorrenti?</label>
-        <select name="stitichezza_diarrea">
-          <option value="no">No</option>
-          <option value="si">Sì</option>
-        </select>
-
-        <label>114. Hai altre osservazioni sulla tua alimentazione o benessere intestinale?</label>
-        <textarea name="alimentazione_benessere_intestinale_altro" rows="3"></textarea>
-
-        <label>115. Hai suggerimenti o commenti sulla tua nutrizione o rigenerazione?</label>
-        <textarea name="nutrizione_rigenerazione_commenti" rows="3"></textarea>
-      </div>
-
-      <button type="submit">Invia e genera report</button>
+            <!-- Domanda 115 -->
+            <label><strong>
+              107. Hai mai notato segnali ricorrenti tra questi, che potrebbero indicare un accumulo di “scorie cellulari”?</strong></label><br />
+              <label><input type="checkbox" name="domanda115[]" value="stanchezza"> Sensazione di stanchezza persistente anche dopo il riposo</label><br>
+              <label><input type="checkbox" name="domanda115[]" value="digestione_lenta"> Gonfiore o digestione lenta</label><br>
+              <label><input type="checkbox" name="domanda115[]" value="dolori"> Dolori muscolari o articolari non spiegati</label><br>
+              <label><input type="checkbox" name="domanda115[]" value="concentrazione"> Difficoltà di concentrazione</label><br>
+              <label><input type="checkbox" name="domanda115[]" value="cutanei"> Problemi cutanei</label><br>
+              <label><input type="checkbox" name="domanda115[]" value="nessuno"> Nessuno di questi sintomi</label><br>
+              <label>Quanto tempo fa e per quanto tempo?<br>
+                <textarea name="domanda115_tempo" rows="3" cols="50"></textarea>
+              </label>
+            </div>
+              <hr>
+              <div class="step" id="step5">
+                <h2>ALIMENTAZIONE E NUTRIZIONE</h2>
+                <h5>Se disponi di un test o di un’analisi recente relativa a {ALIMENTAZIONE E NUTRIZIONE}, puoi inviarla: ci aiuterà a elaborare un report ancora più preciso e personalizzato.</h5>
+       
+                <label><strong>
+                  108. Ritieni di seguire una dieta equilibrata che ti garantisce tutti i nutrienti necessari per il tuo fabbisogno quotidiano?</strong></label><br />
+                <label><input type="checkbox" name="dieta_equilibrata" value="dieta_varia" /> Sì, seguo una dieta varia e bilanciata</label><br />
+                <label><input type="checkbox" name="dieta_equilibrata" value="potrei_migliorare" /> Abbastanza, ma potrei migliorare in alcuni aspetti</label><br />
+                <label><input type="checkbox" name="dieta_equilibrata" value="dieta_sbilanciata" /> No, la mia dieta è spesso sbilanciata o ripetitiva</label><br />
+                <label><input type="checkbox" name="dieta_equilibrata" value="non_so" /> Non so / Non ho mai valutato davvero la qualità della mia alimentazione</label><br /><br />
+
+                <label><strong>
+                  109. Quale affermazione descrive meglio le tue abitudini alimentari attuali?</strong></label><br />
+              <label><input type="checkbox" name="q85" value="equilibrata"> Seguo una dieta equilibrata</label><br>
+              <label><input type="checkbox" name="q85" value="cerco_ma_sgarro"> Cerco di mangiare sano, ma ho frequenti sgarri</label><br>
+              <label><input type="checkbox" name="q85" value="salto_o_monotona"> Salto spesso i pasti o ho una dieta monotona</label><br>
+              <label><input type="checkbox" name="q85" value="disordinate"> Ho abitudini alimentari disordinate</label>
+      
+                <label><strong>
+                  110. Quante porzioni di frutta e verdura consumi in media al giorno?</strong></label><br />
+                <label><input type="checkbox" name="q86" value="0_1"> 0-1</label><br>
+                <label><input type="checkbox" name="q86" value="2_3"> 2-3</label><br>
+                <label><input type="checkbox" name="q86" value="4_5"> 4-5</label><br>
+                <label><input type="checkbox" name="q86" value="6_plus"> 6 o più</label>
+  
+                <!-- Domanda 113 -->
+            <label><strong>
+              111. Quanto pensi che il tuo stile alimentare e le tue abitudini influiscano sull’efficienza metabolica e sulla regolazione ormonale?</strong></label><br />
+            <label><input type="checkbox" name="domanda113" value="alto"> Elevatamente: seguo protocolli come digiuno intermittente o restrizione calorica consapevole</label><br>
+            <label><input type="checkbox" name="domanda113" value="moderato"> Moderatamente: cerco di mangiare sano ma senza strategie specifiche</label><br>
+            <label><input type="checkbox" name="domanda113" value="basso"> Poco: ho abitudini alimentari disordinate o irregolari</label><br>
+            <label><input type="checkbox" name="domanda113" value="ignoto"> Non ne ho idea / non ho mai riflettuto su questo aspetto</label>
+
+            <label><strong>
+              112. Hai mai avuto sintomi che potrebbero suggerire un’alterazione della barriera intestinale?</strong></label><br />
+              <label><input type="checkbox" name="domanda99" value="frequentemente"> Sì, frequentemente</label><br>
+              <label><input type="checkbox" name="domanda99" value="a_volte"> A volte, ma non ho mai approfondito</label><br>
+              <label><input type="checkbox" name="domanda99" value="raramente"> Raramente</label><br>
+              <label><input type="checkbox" name="domanda99" value="mai"> Mai</label><br>
+              <label><input type="checkbox" name="domanda99" value="non_so">Non so cosa significhi</label><br>
+              <label>Quanto tempo fa e per quanto tempo?<br>
+                <textarea name="domanda99_note" rows="3" cols="50"></textarea>
+              </label>
+
+            
+            <label><strong>
+              113. Hai mai seguito pratiche come: il digiuno intermittente</strong></label><br />
+              <label><input type="checkbox" name="domanda101" value="attualmente"> Sì, attualmente lo pratico</label><br>
+              <label><input type="checkbox" name="domanda101" value="in_passato"> L'ho provato in passato</label><br>
+              <label><input type="checkbox" name="domanda101" value="ne_ho_sentito"> Ne ho sentito parlare ma non l'ho mai praticato</label><br>
+              <label><input type="checkbox" name="domanda101" value="non_le_conosco"> No, non lo conosco / non lo pratico</label>
+              <label>Se si, puoi scrivere cosa mangi e da quanto tempo lo pratichi?<br>
+                <textarea name="domanda113_note" rows="3" cols="50"></textarea>
+              </label>
+
+              <label><strong>
+                114. Hai mai seguito pratiche come: la restrizione calorica?</strong></label><br />
+                <label><input type="checkbox" name="domanda101" value="attualmente"> Sì, attualmente la pratico</label><br>
+                <label><input type="checkbox" name="domanda101" value="in_passato"> L'ho provata in passato</label><br>
+                <label><input type="checkbox" name="domanda101" value="ne_ho_sentito"> Ne ho sentito parlare ma non l'ho mai praticata</label><br>
+                <label><input type="checkbox" name="domanda101" value="non_le_conosco"> No, non la conosco / non la pratico</label>
+                <label>Se si, puoi scrivere cosa mangi e da quanto tempo la pratichi?<br>
+                  <textarea name="domanda114_note" rows="3" cols="50"></textarea>
+                </label>
+    
+              <label><strong>
+                115. Hai un’attività intestinale regolare?</strong></label><br />
+              <label><input type="checkbox" name="attività_intestinale" value="regolare1" /> Sì, evacuo 1 o più volte al giorno senza difficoltà</label><br />
+              <label><input type="checkbox" name="attività_intestinale" value="regolare2_3" /> Sì, evacuo ogni 2-3 giorni senza difficoltà</label><br />
+              <label><input type="checkbox" name="attività_intestinale" value="stitichezza" /> No, soffro spesso di stitichezza (meno di 3 evacuazioni a settimana)</label><br />
+              <label><input type="checkbox" name="attività_intestinale" value="diarrea" /> No, ho frequenti episodi di diarrea (più di 3 evacuazioni al giorno)</label><br />
+              <label><input type="checkbox" name="attività_intestinale" value="alternanza" /> Alterno episodi di stitichezza e diarrea</label><br />
+              <label><input type="checkbox" name="attività_intestinale" value="non_so" /> Non so / Non ho mai prestato attenzione</label><br /><br />
+              </div>
+              <hr>
+              <div class="step" id="step6">
+                <h2>ANAMNESI COGNITIVA ED EMOTIVA</h2>
+                <h5>Se disponi di un test o di un’analisi recente relativa a {ANAMNESI COGNITIVA ED EMOTIVA}, puoi inviarla: ci aiuterà a elaborare un report ancora più preciso e personalizzato.</h5>
+       
+                <label><strong>
+                  116. Quanto spesso ti senti stressato o sopraffatto dalle situazioni della vita quotidiana?</strong></label><br />
+                <label><input type="checkbox" name="q82" value="mai"> Mai</label><br>
+                <label><input type="checkbox" name="q82" value="raramente"> Raramente</label><br>
+                <label><input type="checkbox" name="q82" value="qualche_volta"> Qualche volta</label><br>
+                <label><input type="checkbox" name="q82" value="spesso"> Spesso</label><br>
+                <label><input type="checkbox" name="q82" value="sempre"> Sempre / tutti i giorni</label>
+  
+              <label><strong>
+                117. Hai mai notato uno o più di questi sintomi legati allo stress? <br><em>(puoi selezionare più risposte)</em></strong></label><br />
+                <label><input type="checkbox" name="q83" value="tachicardia"> Tachicardia o palpitazioni</label><br>
+                <label><input type="checkbox" name="q83" value="insonnia"> Insonnia o risvegli frequenti</label><br>
+                <label><input type="checkbox" name="q83" value="ansia"> Irritabilità o ansia continua</label><br>
+                <label><input type="checkbox" name="q83" value="gastrointestinali"> Disturbi gastrointestinali (es. colon irritabile)</label><br>
+                <label><input type="checkbox" name="q83" value="stanchezza"> Sensazione di stanchezza cronica</label><br>
+                <label><input type="checkbox" name="q83" value="nessuno"> Nessuno di questi</label>
+             
+              <label><strong>
+                118. Quanto ti senti supportato/a dalle persone intorno a te nella vita quotidiana?</strong></label><br />
+                <label><input type="checkbox" name="q87" value="1"> Mi sento molto supportato/a e posso contare su più persone</label><br>
+                <label><input type="checkbox" name="q87" value="2"> Ho qualche persona su cui contare, ma a volte mi sento solo/a</label><br>
+                <label><input type="checkbox" name="q87" value="3"> Mi sento spesso solo/a e con pochi punti di riferimento</label><br>
+                <label><input type="checkbox" name="q87" value="4"> Non ho nessuno su cui poter contare in caso di difficoltà</label>
+  
+              <label><strong>
+                119. Hai mai praticato mindfulness o meditazione per la gestione dello stress o del benessere psicofisico?</strong></label><br />
+                <label><input type="checkbox" name="q88" value="1"> Sì, seguo regolarmente un programma strutturato (es. MBSR, meditazione quotidiana)</label><br>
+                <label><input type="checkbox" name="q88" value="2"> Sì, occasionalmente pratico meditazione o tecniche di consapevolezza</label><br>
+                <label><input type="checkbox" name="q88" value="3"> Ne ho sentito parlare ma non l’ho mai praticata</label><br>
+                <label><input type="checkbox" name="q88" value="4"> No, non conosco né ho mai praticato la mindfulness</label>
+  
+              <label><strong>
+                120. Hai mai sofferto di episodi depressivi ricorrenti o ti capita spesso di ruminare pensieri negativi anche quando i sintomi sembrano sotto controllo?</strong></label><br />
+                <label><input type="checkbox" name="q89" value="1"> Sì, ho avuto almeno 3 episodi depressivi e ho difficoltà a gestire pensieri negativi</label><br>
+                <label><input type="checkbox" name="q89" value="2"> Ho avuto qualche episodio depressivo e mi capita di ruminare spesso</label><br>
+                <label><input type="checkbox" name="q89" value="3"> A volte mi sento giù, ma non ho mai avuto una diagnosi di depressione</label><br>
+                <label><input type="checkbox" name="q89" value="4"> No, non ho mai avuto episodi depressivi o tendenza alla ruminazione</label><br><br>
+                <label>Quanto tempo fa e per quanto tempo?<br>
+                  <textarea name="q89_text" rows="3" cols="50"></textarea>
+                </label>
+  
+              <label><strong>
+                121. Senti il bisogno di ridurre stress, ansia o pressione alta in modo naturale e non farmacologico?</strong></label><br />
+                <label><input type="checkbox" name="q90" value="1"> Sì, ho una diagnosi di ipertensione o rischio cardiovascolare e cerco soluzioni complementari</label><br>
+                <label><input type="checkbox" name="q90" value="2"> Sì, ma non ho patologie: voglio solo rilassarmi e migliorare la mia concentrazione</label><br>
+                <label><input type="checkbox" name="q90" value="3"> No, ma mi incuriosisce l’idea di provare tecniche di meditazione per il benessere</label><br>
+                <label><input type="checkbox" name="q90" value="4"> No, non mi interessa la meditazione</label>
+  
+              <label><strong>
+                122. Hai mai sperimentato difficoltà di concentrazione o impulsività che interferiscono con il lavoro o lo studio?</strong></label><br />
+                <label><input type="checkbox" name="q91" value="1"> Sì, mi è stato diagnosticato l’ADHD o sospetto di averlo</label><br>
+                <label><input type="checkbox" name="q91" value="2"> Sì, ma non ho mai ricevuto una diagnosi formale</label><br>
+                <label><input type="checkbox" name="q91" value="3"> No, ma mi interessa potenziare attenzione e performance mentale</label><br>
+                <label><input type="checkbox" name="q91" value="4"> No, non ho problemi di attenzione o iperattività</label><br><br>
+                <label>Quanto tempo fa e per quanto tempo?<br>
+                  <textarea name="q91_text" rows="3" cols="50"></textarea>
+                </label>
+  
+              <label><strong>
+                123. Hai mai sperimentato difficoltà nel controllare l’impulsività o l’attenzione, oppure soffri di epilessia resistente ai farmaci?</strong></label><br />
+                <label><input type="checkbox" name="q92" value="1"> Sì, ho ricevuto diagnosi di ADHD, epilessia o disturbo dell’impulsività</label><br>
+                <label><input type="checkbox" name="q92" value="2"> Sì, ho sintomi simili ma non ho una diagnosi</label><br>
+                <label><input type="checkbox" name="q92" value="3"> No, ma mi interessa migliorare la mia autoregolazione e il focus mentale</label><br>
+                <label><input type="checkbox" name="q92" value="4"> No, non ho problemi di questo tipo</label><br><br>
+                <label>Quanto tempo fa e per quanto tempo?<br>
+                  <textarea name="q92_text" rows="3" cols="50"></textarea>
+                </label>
+  
+                <label><strong>
+                  124.</strong> Hai difficoltà a dormire o ti senti spesso agitato, impulsivo o incapace di rilassarti anche a riposo?</p>
+                <label><input type="checkbox" name="domanda93" value="sonno"> Sì, ho problemi di sonno ricorrenti (es. fatica ad addormentarmi o risvegli notturni)</strong></label><br />
+                <label><input type="checkbox" name="domanda93" value="irrequieto"> Sì, mi sento spesso irrequieto/a o ho difficoltà a stare fermo/a</label><br>
+                <label><input type="checkbox" name="domanda93" value="interessato"> No, ma mi interessa migliorare concentrazione e qualità del sonno</label><br>
+                <label><input type="checkbox" name="domanda93" value="nessun_problema"> No, non riscontro questi problemi</label>
+  
+                <label><strong>
+                  125. Hai mai sofferto di depressione resistente ai farmaci o ti è stato consigliato un trattamento alternativo per migliorare l’umore o ridurre il dolore cronico?</strong></label><br />
+                <label><input type="checkbox" name="domanda94" value="diagnosi_depressione"> Sì, ho una diagnosi di depressione resistente ai trattamenti tradizionali</label><br>
+                <label><input type="checkbox" name="domanda94" value="dolore_cronico"> Sì, soffro di dolore cronico o sintomi depressivi persistenti nonostante la terapia</label><br>
+                <label><input type="checkbox" name="domanda94" value="interessato_trattamenti"> No, ma sono interessato/a a conoscere trattamenti innovativi non farmacologici</label><br>
+                <label><input type="checkbox" name="domanda94" value="nessun_problema"> No, non ho mai avuto questi problemi</label>
+  
+              <label><strong>
+                  126. Hai mai sofferto di allucinazioni uditive persistenti, acufene cronico, PTSD o disturbi neurologici resistenti ai trattamenti?</strong></label><br />
+                <label><input type="checkbox" name="domanda95" value="diagnosi_confermata"> Sì, ho una diagnosi confermata e i trattamenti attuali non sono efficaci</label><br>
+                <label><input type="checkbox" name="domanda95" value="sintomi_non_trattati"> Sì, ho sintomi compatibili ma non ho ancora ricevuto un trattamento specifico</label><br>
+                <label><input type="checkbox" name="domanda95" value="problemi_passati"> No, ma ho avuto disturbi simili in passato</label><br>
+                <label><input type="checkbox" name="domanda95" value="mai_avuti"> No, non ho mai avuto questi disturbi</label><br>
+                <label><strong>Campo testo:</strong> Quanto tempo fa e per quanto tempo?<br>
+                  <textarea name="domanda95_testo" rows="2" cols="50" placeholder="Scrivi qui..."></textarea>
+                </label>
+  
+              <label><strong>
+                  127. Hai mai utilizzato giochi o programmi specifici per migliorare memoria, attenzione o concentrazione?</strong></label><br />
+                <label><input type="checkbox" name="domanda96" value="uso_regolare"> Sì, li uso regolarmente come parte della mia routine</label><br>
+                <label><input type="checkbox" name="domanda96" value="uso_passato"> Sì, li ho provati in passato ma non con continuità</label><br>
+                <label><input type="checkbox" name="domanda96" value="conosco_ma_mai_provati"> Ne ho sentito parlare ma non li ho mai provati</label><br>
+                <label><input type="checkbox" name="domanda96" value="non_conosco"> No, non li conosco o non li ho mai utilizzati</label>
+  
+                <label><strong>
+                  128. Hai mai seguito o saresti interessato a un programma strutturato per migliorare la tua memoria (es. con tecniche mnemoniche, esercizi mirati, strategie di recupero)?</strong></label><br />
+                <label><input type="checkbox" name="domanda97" value="seguito_programma"> Sì, ho seguito un programma di allenamento della memoria in passato</label><br>
+                <label><input type="checkbox" name="domanda97" value="interessato"> Sì, mi piacerebbe provare se fosse disponibile</label><br>
+                <label><input type="checkbox" name="domanda97" value="conosco_ma_dubbi"> Ne ho sentito parlare ma non conosco i benefici</label><br>
+                <label><input type="checkbox" name="domanda97" value="non_interessato"> No, non sono interessato o non ne vedo l’utilità</label>
+  
+                <label><strong>
+                  129. Hai mai utilizzato l’arte (disegno, pittura, collage…) o la musica per esprimere emozioni difficili o per gestire momenti di stress o disagio?</strong></label><br />
+                <label><input type="checkbox" name="domanda98" value="spesso"> Sì, spesso: mi aiuta a stare meglio</label><br>
+                <label><input type="checkbox" name="domanda98" value="qualche_volta"> Sì, qualche volta, ma senza una guida terapeutica</label><br>
+                <label><input type="checkbox" name="domanda98" value="mai_ma_interessato"> No, ma potrei provarci se guidato in un contesto sicuro</label><br>
+                <label><input type="checkbox" name="domanda98" value="non_credo"> No, non credo che l’arte possa aiutarmi in questo modo</label>
+  
+              
+              <label><strong>
+                130. Riesci a percepire un buon equilibrio tra corpo e mente nelle tue giornate?</strong></label><br />
+                <label><input type="checkbox" name="domanda102" value="spesso_in_equilibrio"> Sì, spesso mi sento in equilibrio su più livelli</label><br>
+                <label><input type="checkbox" name="domanda102" value="dipende_dal_periodo"> A volte, dipende dal periodo</label><br>
+                <label><input type="checkbox" name="domanda102" value="raramente_in_equilibrio"> Raramente, mi sento spesso sbilanciato tra corpo e mente</label><br>
+                <label><input type="checkbox" name="domanda102" value="no_disconnessione"> No, avverto disconnessione o disorganizzazione tra emozioni, energia e mente</label>
+                </label>
+              </div>
+                <hr>
+                <div class="step" id="step7">
+                  <h2>QUALITA' DEL SONNO</h2>
+                  <h5>Se disponi di un test o di un’analisi recente relativa a {QUALITà DEL SONNO}, puoi inviarla: ci aiuterà a elaborare un report ancora più preciso e personalizzato.</h5>  
+
+            <label><strong>
+              131. Negli ultimi 30 giorni, come valuteresti la qualità del tuo sonno?</strong></label><br />
+            <label><input type="checkbox" name="qualita_sonno" value="ottima" /> Ottima – Dormo bene, mi sveglio riposato</label><br />
+            <label><input type="checkbox" name="qualita_sonno" value="buona" /> Buona – Qualche notte agitata, ma in generale dormo bene</label><br />
+            <label><input type="checkbox" name="qualita_sonno" value="discreta" /> Discreta – Fatico ad addormentarmi o mi sveglio spesso</label><br />
+            <label><input type="checkbox" name="qualita_sonno" value="scarsa" /> Scarsa – Dormo poco o male, mi sento stanco durante il giorno</label><br /><br />
+
+            <label><strong>
+              132. Quante ore dormi in media ogni notte?</strong></label><br />
+            <label><input type="checkbox" name="ore_sonno" value="meno_5" /> Meno di 5 ore</label><br />
+            <label><input type="checkbox" name="ore_sonno" value="5_6" /> 5-6 ore</label><br />
+            <label><input type="checkbox" name="ore_sonno" value="6_7" /> 6-7 ore</label><br />
+            <label><input type="checkbox" name="ore_sonno" value="7_8" /> 7-8 ore</label><br />
+            <label><input type="checkbox" name="ore_sonno" value="piu_9" /> Più di 8 ore</label><br />
+            <label><input type="checkbox" name="ore_sonno" value="non_so" /> Non lo so / Varia molto</label><br /><br />
+
+            <label><strong>
+              133. Di solito, a che ora vai a letto la sera?</strong></label><br />
+            <input type="time" name="ora_letto" /><br /><br />
+
+            <label><strong>
+              134. Di solito, quanto tempo (in minuti) impieghi ad addormentarti ogni notte?</strong></label><br />
+            <input type="number" name="tempo_addormentamento" /><br /><br />
+
+            <label><strong>
+              135. Di solito, a che ora ti svegli al mattino?</strong></label><br />
+            <input type="time" name="ora_sveglia" /><br /><br />
+
+            <label><strong>
+              136. Quante ore dormi effettivamente per notte? (Potrebbero essere diverse dal numero di ore passate a letto)</strong></label><br />
+            <input type="number" name="ore_effettive_sonno" step="0.1" /><br /><br />
+
+            <h2>Quanto spesso hai problemi di sonno dovuti a...</h2>
+            <br>
+            <label><strong>
+              137. Non riuscire ad addormentarsi entro 30 minuti</strong></label><br />
+            <label><input type="checkbox" name="q79e" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79e" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79e" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79e" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              138. Svegliarti nel mezzo della notte o al mattino presto senza riaddormentarti subito</strong></label><br />
+            <label><input type="checkbox" name="q79f" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79f" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79f" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79f" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              139. Alzarti nel mezzo della notte per andare in bagno</strong></label><br />
+            <label><input type="checkbox" name="q79g" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79g" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79g" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79g" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              140. Non riuscire a respirare bene</strong></label><br />
+            <label><input type="checkbox" name="q79h" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79h" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79h" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79h" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              141. Tossire o russare forte</strong></label><br />
+            <label><input type="checkbox" name="q79i" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79i" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79i" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79i" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              142. Sentire troppo freddo</strong></label><br />
+            <label><input type="checkbox" name="q79j" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79j" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79j" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79j" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              143. Sentire troppo caldo</strong></label><br />
+            <label><input type="checkbox" name="q79k" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79k" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79k" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79k" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              144. Fare brutti sogni</strong></label><br />
+            <label><input type="checkbox" name="q79l" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79l" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79l" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79l" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              145. Avere dolori</strong></label><br />
+            <label><input type="checkbox" name="q79m" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79m" value="raramente" /> Raramente</label><br />
+            <label><input type="checkbox" name="q79m" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79m" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              146. C'è qualche altro problema che può aver disturbato il tuo sonno?</strong></label><br />
+            <textarea name="q79n_descrizione" rows="4" cols="50" placeholder="Descrivi il problema..."></textarea><br /><br />
+            <label>Quanto spesso hai avuto problemi a dormire per questo motivo?</label><br />
+            <label><input type="checkbox" name="q79n_frequenza" value="meno_1" /> Meno di una volta a settimana</label><br />
+            <label><input type="checkbox" name="q79n_frequenza" value="1_2" /> Una o due volte a settimana</label><br />
+            <label><input type="checkbox" name="q79n_frequenza" value="3_plus" /> Tre o più volte a settimana</label><br /><br />
+
+            <label><strong>
+              147. Come valuti complessivamente la qualità del tuo sonno?</strong></label><br />
+            <label><input type="checkbox" name="q79o" value="molto_buona" /> Molto buona</label><br />
+            <label><input type="checkbox" name="q79o" value="abbastanza_buona" /> Abbastanza buona</label><br />
+            <label><input type="checkbox" name="q79o" value="abbastanza_cattiva" /> Abbastanza cattiva</label><br />
+            <label><input type="checkbox" name="q79o" value="cattiva" /> Cattiva</label><br /><br />
+
+            <label><strong>
+              148. Hai mai assunto farmaci (prescritti o da banco) per aiutarti a dormire?</strong></label><br />
+              
+              <label><input type="checkbox" name="assunzione_farmaci_sonno" value="mai" /> Mai</label><br />
+              <label><input type="checkbox" name="assunzione_farmaci_sonno" value="occasionale" /> Sì, occasionalmente</label><br />
+              <label><input type="checkbox" name="assunzione_farmaci_sonno" value="frequente" /> Sì, frequentemente</label><br />
+              <label><input type="checkbox" name="assunzione_farmaci_sonno" value="uso_continuativo" /> Sì, uso continuativo quotidiano</label><br /><br />
+              
+              <label><strong>Se sì:</strong></label><br />
+              <label>Quali farmaci hai usato? (es: benzodiazepine, melatonina, antistaminici, integratori naturali, altro) <br />
+              <input type="text" name="tipologia_farmaci_sonno" placeholder="Scrivi il nome o il tipo di farmaco"></label><br /><br />
+              
+              <label>Stai ancora assumendo questi farmaci?</label><br />
+              <select name="assunzione_attuale_farmaci_sonno">
+                <option value="">-- Seleziona --</option>
+                <option value="si">Sì</option>
+                <option value="no">No</option>
+              </select><br /><br />
+              
+              <label>Per quanto tempo li hai assunti (o li assumi)?</label><br />
+              <input type="text" name="durata_assunzione_farmaci_sonno" placeholder="Es. 6 mesi, 3 anni, ecc."><br /><br>
+
+            <label><strong>
+              149. Ti è mai capitato di avere difficoltà a rimanere sveglio/a alla guida o nel corso di attività sociali?</strong></label><br />
+            <label><input type="checkbox" name="q79q" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79q" value="poche_volte" /> Poche volte</label><br />
+            <label><input type="checkbox" name="q79q" value="spesso" /> Spesso</label><br />
+            <label><input type="checkbox" name="q79q" value="ogni_giorno" /> Ogni giorno</label><br /><br />
+
+            <label><strong>
+              150. Hai mai avuto problemi ad avere energie sufficienti per concludere le tue normali attività?</strong></label><br />
+            <label><input type="checkbox" name="q79r" value="mai" /> Mai</label><br />
+            <label><input type="checkbox" name="q79r" value="poche_volte" /> Poche volte</label><br />
+            <label><input type="checkbox" name="q79r" value="spesso" /> Spesso</label><br />
+            <label><input type="checkbox" name="q79r" value="ogni_giorno" /> Ogni giorno</label><br /><br />
+
+            <label><strong>
+              151. Hai mai ricevuto una diagnosi per disturbi del sonno (es. insonnia, apnee notturne)?</strong></label><br />
+            <label><input type="checkbox" name="q80" value="si" /> Sì</label><br />
+            <label><input type="checkbox" name="q80" value="no" /> No</label><br /><br />
+                </div>
+                <hr>
+                <button type="submit">Invia</button>
     </form>
 
-    <div id="risultato" class="hidden">
-      <h2>Il tuo Report</h2>
-      <div id="reportTesto"></div>
-      <canvas id="radarChart" width="400" height="400"></canvas>
-    </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
