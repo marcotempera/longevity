@@ -6,15 +6,7 @@ body {
     color: #333;
   }
   
-  .container {
-    max-width: 700px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    animation: slideUp 0.6s ease-out;
-  }
+ 
   
   h1 {
     font-size: 1.8rem;
@@ -45,28 +37,32 @@ body {
     outline: none;
   }
   
+  .botton {
+    display: flex;
+    justify-content: center; /* centra orizzontalmente */
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
   button[type="submit"] {
     background: #00796b;
     color: #fff;
     border: none;
     padding: 12px 20px;
-    font-size: 1rem;
+    font-size: 3rem;
     border-radius: 12px;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 20px;
-    display: block;
-    width: 100%;
+    transition: background 0.3s ease;
+    font-weight: bold;
   }
   
   button:hover {
     background: #004d40;
   }
-  
-  .section {
-    margin-top: 30px;
-    animation: fadeIn 0.8s ease forwards;
-    opacity: 0;
+
+  textarea {
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .section:nth-of-type(1) { animation-delay: 0.2s; }
@@ -81,6 +77,128 @@ body {
     margin-top: 20px;
     white-space: pre-wrap;
     font-size: 0.95rem;
+  }
+
+  .section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+  }
+
+
+
+  #step1 {
+    background-color: rgb(234, 136, 124);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step2 {
+    background-color: rgb(250, 197, 158);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step3 {
+    background-color: rgb(248, 214, 126);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step4 {
+    background-color: rgb(150, 198, 142);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step5 {
+    background-color: rgb(129, 181, 242);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step6 {
+    background-color: rgb(125, 134, 200);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step7 {
+    background-color: rgb(178, 113, 196);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step8 {
+    background-color: rgb(250, 197, 158);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step9 {
+    background-color: rgb(248, 214, 126);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+  }
+
+  #step10 {
+    background-color:  rgb(150, 198, 142);
+    border-color: black;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
   }
   
   @keyframes fadeIn {
