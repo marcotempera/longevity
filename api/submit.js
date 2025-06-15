@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 // /api/submit.js
 import { createClient } from '@supabase/supabase-js';
 
@@ -13,6 +15,10 @@ export default async function handler(req, res) {
 
   try {
     const { nome, cognome, email, ...risposte } = req.body;
+
+    if (!nome || !cognome || !email || Object.keys(risposte).length === 0) {
+      return res.status(400).json({ success: false, message: 'Dati mancanti o incompleti' });
+    }
 
     const { data, error } = await supabase
       .from('responses')
