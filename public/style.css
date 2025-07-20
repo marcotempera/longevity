@@ -67,6 +67,14 @@ body {
     text-align: center;
     color: #00796b;
   }
+
+  @media (max-width:480px){
+    h1{
+      margin-top:60px;   /* oppure padding-top */
+      font-size:1.4rem;
+    }
+    #lang-btn img{width:24px;height:24px;} /* un filo più piccola */
+  }
   
   form label {
     display: block;
