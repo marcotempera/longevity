@@ -7,6 +7,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- bottone con la bandiera corrente (IT) -->
+  <button id="lang-btn" type="button" aria-label="Cambia lingua">
+    <img id="lang-flag" src="https://flagcdn.com/h20/it.png" alt="Italiano" />
+  </button>
+
+  <!-- menu di scelta lingua -->
+  <div id="lang-menu" role="menu">
+    <a href="index-it.html" class="current" data-lang="it">
+      <img src="https://flagcdn.com/h20/it.png" alt=""> Italiano
+    </a>
+    <a href="index-en.html" data-lang="en">
+      <img src="https://flagcdn.com/h20/gb.png" alt=""> English
+    </a>
+  </div>
   <div class="container">
     <h1>PREDICTION TEST BY ENNIO TASCIOTTI</h1>
     <form id="questionarioForm">
@@ -2413,6 +2427,21 @@
 
  </form>
 
+ <script>
+    // apre/chiude il menu
+    const langBtn  = document.getElementById('lang-btn');
+    const langMenu = document.getElementById('lang-menu');
+
+    langBtn?.addEventListener('click', e => {
+      e.stopPropagation();
+      langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // chiudi cliccando fuori
+    document.addEventListener('click', () => {
+      if (langMenu) langMenu.style.display = 'none';
+    });
+  </script>
 
   <script src="script.js" defer></script>
 </body>

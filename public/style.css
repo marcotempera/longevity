@@ -6,7 +6,60 @@ body {
     color: #333;
   }
   
- 
+  #lang-btn {
+    position: fixed;      /* pulsante flottante in alto a destra */
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 0;         /* nasconde eventuale testo */
+  }
+  
+  #lang-btn img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* menu a discesa */
+  #lang-menu {
+    position: fixed;
+    top: 56px;
+    right: 16px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
+    display: none;        /* nascosto di default: lo mostrerai via JS */
+    z-index: 1000;
+  }
+  
+  #lang-menu a {
+    width: 180px;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #lang-menu a:hover {
+    background: #f2f2f2;
+  }
+  
+  #lang-menu img {
+    width: 18px;
+    height: 18px;
+  }
+  
+  #lang-menu a.current {
+    opacity: 0.5;         /* evidenzia la lingua attiva */
+    pointer-events: none; /* disabilita il click su quella lingua */
+  }
   
   h1 {
     font-size: 1.8rem;
